@@ -9,13 +9,15 @@
 #   end
 require "open-uri"
 
-Cart.destroy_all
+
 Order.destroy_all
 LineItem.destroy_all
 Service.destroy_all
 User.destroy_all
 
 puts "creando usuarios"
+
+cart = Cart.create!
 
 user = User.new(email: "cristopher@gmail.com",
                 password: "123456",
@@ -65,7 +67,7 @@ file = URI.open("https://avatars.githubusercontent.com/u/64622223?v=4")
 user4.photo.attach(io: file, filename: "jose.png", content_type: "image/png")
 user4.save!
 
-"######################## Creando Productos ########################"
+puts "######################## Creando Productos ########################"
 
 service = Service.new(tipo: "Fullday",
                       title: "Cayo Sombrero",
@@ -76,20 +78,20 @@ service = Service.new(tipo: "Fullday",
                       latitude: "10,883523",
                       longitude: "-68,209566",
                       date: "2024/10/23",
-                      user_id: users2.id)
-
+                      user_id: user2.id)
 photo_urls = [
   "https://i.pinimg.com/originals/93/8e/ca/938eca5d9fb12e6a05ac84a0d797055b.jpg",
   "https://www.info4camper.com/fotos/visitar/ve/large/photos-12115-19475-cayo_sombrero.jpg",
   "https://3.bp.blogspot.com/-OG5jKTC9_3s/VvMPN1zNRrI/AAAAAAAACIY/CI7a1Gk_rLc2-YY-hH_k1_IJf-TpQEH4w/s1600/Cayo%2Bsombrero%2B2.png",
   "https://www.venelogia.com/uploads/2012/567_1121697134.jpg"
 ]
-
 photo_urls.each do |url|
   service.photos.attach(io: URI.open(url), filename: "service1.jpg")
 end
+
 service.save!
-puts("#{service.tipo} #{service.title} Creado y pertenece al usuario #{service.user_id.id} #{service.user_id.first_name}")
+
+puts "#{service.tipo} #{service.title} Creado"
 
 service2 = Service.new(tipo: "Fullday",
                        title: "Medanos de Coro",
@@ -100,19 +102,21 @@ service2 = Service.new(tipo: "Fullday",
                        latitude: "11,035275",
                        longitude: "-68,404183",
                        date: "2024/10/4",
-                       user_id: users2.id)
+                       user_id: user2.id)
+
 photo_urls = [
   "https://secureservercdn.net/166.62.114.250/33t.d96.myftpupload.com/wp-content/uploads/2021/01/Medanos-de-Coro.jpg",
   "https://olaolatravel.com/wp/wp-content/uploads/2018/08/M%C3%A9danos.de_.Coro_.National.Park_.640.8081.jpg",
   "https://4.bp.blogspot.com/-pnjrNd8SCro/V0xpVhj0T7I/AAAAAAAAACY/-KcnOibLeLkF6wSQlmCthV1OwMQP-uc1gCLcB/s1600/img_3063_800x600.jpg",
   "https://th.bing.com/th/id/R.5da0d4714a8c9752770c57a51e14d551?rik=OsVaRR%2bkuFlCRQ&pid=ImgRaw&r=0"
 ]
-
 photo_urls.each do |url|
   service2.photos.attach(io: URI.open(url), filename: "service2.jpg")
 end
+
 service2.save!
-puts("#{service2.tipo} #{service2.title} Creado y pertenece al usuario #{service2.user_id.id} #{service2.user_id.first_name}")
+
+puts "#{service2.tipo} #{service2.title} Creado"
 
 service3 = Service.new(tipo: "Fullday",
                        title: "Parque Nacional Mochima",
@@ -123,7 +127,8 @@ service3 = Service.new(tipo: "Fullday",
                        latitude: "10.346384",
                        longitude: "-64.340658",
                        date: "2024/07/23",
-                       user_id: users2.id)
+                       user_id: user2.id)
+
 photo_urls = [
   "https://th.bing.com/th/id/OIP.MfUTrDVMYAZ3bHIUC5FxvQHaES?rs=1&pid=ImgDetMain",
   "https://1.bp.blogspot.com/-N97k0OBr4Ik/V-BL1N30VmI/AAAAAAAADG4/psuqHTkomm0QyYcQGrc99S8s8F7iiRunACLcB/s1600/3373948.jpg",
@@ -134,8 +139,10 @@ photo_urls = [
 photo_urls.each do |url|
   service3.photos.attach(io: URI.open(url), filename: "service3.jpg")
 end
+
 service3.save!
-puts("#{service3.tipo} #{service3.title} Creado y pertenece al usuario #{service3.user_id.id} #{service3.user_id.first_name}")
+
+puts "#{service3.tipo} #{service3.title} Creado"
 
 service4 = service.new(tipo: "Fullday",
                        title: "Parque Nacional El Avila",
@@ -146,7 +153,8 @@ service4 = service.new(tipo: "Fullday",
                        latitude: "10,557388",
                        longitude: "-66,860008",
                        date: "2024/07/6",
-                       user_id: users2.id)
+                       user_id: user2.id)
+
 photo_urls = [
   "https://th.bing.com/th/id/OIP.bujQVTBG40hkTuVOaYdrlAHaE-?rs=1&pid=ImgDetMain",
   "https://media-cdn.tripadvisor.com/media/photo-s/04/37/60/01/parque-nacional-el-avila.jpg",
@@ -158,8 +166,10 @@ photo_urls = [
 photo_urls.each do |url|
   service4.photos.attach(io: URI.open(url), filename: "service4.jpg")
 end
+
 service4.save!
-puts("#{service4.tipo} #{service4.title} Creado y pertenece al usuario #{service4.user_id.id} #{service4.user_id.first_name}")
+
+puts "#{service4.tipo} #{service4.title} Creado"
 
 service5 = Service.new(tipo: "Fullday",
                        title: "Vereda del lago de Maracaibo",
@@ -170,7 +180,8 @@ service5 = Service.new(tipo: "Fullday",
                        latitude: "10,663100",
                        longitude: "-71,594261",
                        date: "2024/09/23",
-                       user_id: users2.id)
+                       user_id: user2.id)
+
 photo_urls = [
   "https://th.bing.com/th/id/R.b907d9db530e862937a14a5c39fefb2a?rik=ZKVavG5AVe%2f5fw&pid=ImgRaw&r=0",
   "https://1.bp.blogspot.com/-yAgfSBWfGww/TitqR8L7huI/AAAAAAAAA5c/S9XU__XzUyM/s1600/vereda+del+lago.jpg",
@@ -181,8 +192,10 @@ photo_urls = [
 photo_urls.each do |url|
   service5.photos.attach(io: URI.open(url), filename: "service5.jpg")
 end
+
 service5.save!
-puts("#{service5.tipo} #{service5.title} Creado y pertenece al usuario #{service5.user_id.id} #{service5.user_id.first_name}")
+
+puts "#{service5.tipo} #{service5.title} Creado"
 
 service6 = Service.new(tipo: "Fullday",
                        title: "Brinca Este",
@@ -193,7 +206,8 @@ service6 = Service.new(tipo: "Fullday",
                        latitude: "10,489473",
                        longitude: "-66,826347",
                        date: "2024/12/5",
-                       user_id: users2.id)
+                       user_id: user2.id)
+
 photo_urls = [
   "https://gbvm.knoios.com/mmedia/19605/brinca-este-una-nueva-opcion-para-divertirse-en-caracas-a-un-buen-precio-11311.jpg",
   "https://th.bing.com/th/id/R.c4aaf5ff94d9bcedd43e2228741afd46?rik=JvA3nZs92ieS0A&pid=ImgRaw&r=0",
@@ -204,8 +218,10 @@ photo_urls = [
 photo_urls.each do |url|
   service6.photos.attach(io: URI.open(url), filename: "service6.jpg")
 end
+
 service6.save!
-puts("#{service6.tipo} #{service6.title} Creado y pertenece al usuario #{service6.user_id.id} #{service6.user_id.first_name}")
+
+puts "#{service6.tipo} #{service6.title} Creado"
 
 service7 = Service.new(tipo: "Fullday",
                        title: "Colonia Tovar",
@@ -217,6 +233,7 @@ service7 = Service.new(tipo: "Fullday",
                        longitude: "-67,323530",
                        date: "2024/05/05",
                        user_id: user1.id)
+
 photo_urls = [
   "https://i.dailymail.co.uk/i/pix/2016/02/02/14/30CF782500000578-3428233-image-a-73_1454422024809.jpg",
   "https://th.bing.com/th/id/OIP.q0lcyB9yaalh1Ltu-Y9z6QHaFF?pid=ImgDet&w=474&h=325&rs=1",
@@ -226,8 +243,11 @@ photo_urls = [
 
 photo_urls.each do |url|
   service7.photos.attach(io: URI.open(url), filename: "service7.jpg")
+end
+
 service7.save!
-puts("#{service7.tipo} #{service7.title} Creado y pertenece al usuario #{service7.user_id.id} #{service7.user_id.first_name}")
+
+puts "#{service7.tipo} #{service7.title} Creado"
 
 service8 = Service.new(tipo: "Fullday",
                        title: "Dunas Parque Acuático",
@@ -239,6 +259,7 @@ service8 = Service.new(tipo: "Fullday",
                        longitude: "-67,994919",
                        date: "2024/07/12",
                        user_id: user1.id)
+
 photo_urls = [
   "https://aquarama.net/wp-content/uploads/2019/02/Dunas-2.jpg",
   "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/489000/489112-beach-park-water-park.jpg",
@@ -248,8 +269,11 @@ photo_urls = [
 
 photo_urls.each do |url|
   service8.photos.attach(io: URI.open(url), filename: "service8.jpg")
+end
+
 service8.save!
-puts("#{service8.tipo} #{service8.title} Creado y pertenece al usuario #{service8.user_id.id} #{service8.user_id.first_name}")
+
+puts "#{service8.tipo} #{service8.title} Creado"
 
 service9 = Service.new(tipo: "Fullday",
                        title: "Viaja al Salto Angel",
@@ -261,6 +285,7 @@ service9 = Service.new(tipo: "Fullday",
                        longitude: "-62,536220",
                        date: "2024/08/30",
                        user_id: user1.id)
+
 photo_urls = [
   "https://th.bing.com/th/id/OIP.w9sFD637qPVWvqSP-XV39gHaE8?rs=1&pid=ImgDetMain",
   "https://th.bing.com/th/id/OIP.cQ3t_wS2fqGNjh4k7UPh0QHaFj?rs=1&pid=ImgDetMain",
@@ -270,8 +295,11 @@ photo_urls = [
 
 photo_urls.each do |url|
   service9.photos.attach(io: URI.open(url), filename: "service9.jpg")
+end
+
 service9.save!
-puts("#{service9.tipo} #{service9.title} Creado y pertenece al usuario #{service9.user_id.id} #{service9.user_id.first_name}")
+
+puts "#{service9.tipo} #{service9.title} Creado"
 
 service10 = Service.new(tipo: "Fullday",
                         title: "Parque La Llovizna",
@@ -283,6 +311,7 @@ service10 = Service.new(tipo: "Fullday",
                         longitude: "-62,660648",
                         date: "2024/06/23",
                         user_id: user1.id)
+
 photo_urls = [
   "https://3.bp.blogspot.com/--8TLXM7Yx4k/Wa6bjIcF0zI/AAAAAAAAEDg/_DL1tt3k-9EIjiIHi-faRBXXf2oGUJUBACLcBGAs/s1600/rMAnny1La3YGPQFJkXy7EXWMn.jpg",
   "https://th.bing.com/th/id/R.61582eed273c936f242f78a014eedaf1?rik=OJlWeUMiqKvB7g&pid=ImgRaw&r=0",
@@ -291,20 +320,24 @@ photo_urls = [
 ]
 
 photo_urls.each do |url|
-service10.photos.attach(io: URI.open(url), filename: "service10.jpg")
-  service10.save!
-puts("#{service10.tipo} #{service10.title} Creado y pertenece al usuario #{service10.user_id.id} #{service10.user_id.first_name}")
+  service10.photos.attach(io: URI.open(url), filename: "service10.jpg")
+end
+
+service10.save!
+
+puts "#{service10.tipo} #{service10.title} Creado"
 
 service11 = Service.new(tipo: "Fullday",
                         title: "La Venezuela de Antier",
                         price: 65,
                         rating: 0,
-                        description: "En la vía a Jají desde Ciudad de Merida, se encuentra uno de los parques temáticos de Merida: "La Venezuela de Antier". El tema de este parque es la Venezuela de los años 20 cuando entonces gobernaba el benemérito Juan Vicente Gomez. El recorrido comienza en la estación principal (donde se encuentra el estacionamiento.) se compran las entradas y se toma unos tranvías de la antigua Caracas hasta llegar al parque. Al llegar a la primera estación somos recibidos por un Coronel, quien crea un ambiente que involucra a los visitantes en el tema del parque. Tras la llegada las primeras atracciones son: Un pequeño museo con antiguedades, La Cueva del Guacharo (donde hay una muestra de la misma) y Nueva Esparta (donde se puede participar en un espectáculo donde se rescatan las tradiciones de La Isla de Margarita, el cual esta hecho con mucho humor).",
+                        description: "En la vía a Jají desde Ciudad de Merida, se encuentra uno de los parques temáticos de Merida: 'La Venezuela de Antier'. El tema de este parque es la Venezuela de los años 20 cuando entonces gobernaba el benemérito Juan Vicente Gomez. El recorrido comienza en la estación principal (donde se encuentra el estacionamiento.) se compran las entradas y se toma unos tranvías de la antigua Caracas hasta llegar al parque. Al llegar a la primera estación somos recibidos por un Coronel, quien crea un ambiente que involucra a los visitantes en el tema del parque. Tras la llegada las primeras atracciones son: Un pequeño museo con antiguedades, La Cueva del Guacharo (donde hay una muestra de la misma) y Nueva Esparta (donde se puede participar en un espectáculo donde se rescatan las tradiciones de La Isla de Margarita, el cual esta hecho con mucho humor).",
                         address: "Carretera Panamericana vía Jají - La Azulita, 5101 Mérida",
                         latitude: "8,593546",
                         longitude: "-71,233902",
                         date: "2024/06/5",
                         user_id: user1.id)
+
 photo_urls = [
   "https://th.bing.com/th/id/OIP.S4LSyIMm8zx_nb9RJbblqwHaDT?rs=1&pid=ImgDetMain",
   "https://media-cdn.tripadvisor.com/media/photo-s/0a/b9/7d/df/la-muleraexcelenteiiii.jpg",
@@ -313,9 +346,12 @@ photo_urls = [
 ]
 
 photo_urls.each do |url|
-service11.photos.attach(io: URI.open(url), filename: "service11.jpg")
+  service11.photos.attach(io: URI.open(url), filename: "service11.jpg")
+end
+
 service11.save!
-puts("#{service11.tipo} #{service11.title} Creado y pertenece al usuario #{service11.user_id.id} #{service11.user_id.first_name}")
+
+puts "#{service11.tipo} #{service11.title} Creado"
 
 
 service12 = Service.new(tipo: "Fullday",
@@ -326,6 +362,7 @@ service12 = Service.new(tipo: "Fullday",
                         address: "31 Av. 31 de Julio Barco de Ent a Parque el Agua, Porlamar, Isla de Margarita",
                         date: "",
                         user_id: user1.id)
+
 photo_urls = [
   "https://www.ohlaliving.com/wp-content/uploads/2016/03/aquarama-benicassim-1.jpg",
   "https://i.pinimg.com/736x/3c/b0/9e/3cb09e25f4cb7ee9537c9445bd9d06b5--hotel-parque-margarita.jpg",
@@ -335,5 +372,8 @@ photo_urls = [
 
 photo_urls.each do |url|
   service12.photos.attach(io: URI.open(url), filename: "service12.jpg")
+end
+
 service12.save!
-puts("#{service12.tipo} #{service12.title} Creado y pertenece al usuario #{service12.user_id.id} #{service12.user_id.first_name}")
+
+puts "#{service12.tipo} #{service12.title} Creado"
