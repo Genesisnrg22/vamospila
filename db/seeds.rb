@@ -410,8 +410,11 @@ puts "######################## Creando Orden ########################"
 order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
 
 line_item1.order = order1
+line_item1.update(cart_id: nil)
 line_item2.order = order1
+line_item2.update(cart_id: nil)
 line_item3.order = order1
+line_item3.update(cart_id: nil)
 
 cart1.destroy!
 
