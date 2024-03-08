@@ -413,4 +413,6 @@ line_item1.order = order1
 line_item2.order = order1
 line_item3.order = order1
 
+cart1.destroy!
+
 puts "Orden Creada"
