@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   skip_before_action :authenticate_user!
   include CurrentCart
-  before_action :set_cart, only: create
+  before_action :set_cart, only: :create
 
   def index
     @line_items = LineItem.all

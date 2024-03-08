@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   def index
     @services = Service.all
+    @service1 = Service.first
   end
 
   def new
@@ -22,6 +23,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    @service = set_service
     if current_user.id == @service.user.id
       @service = set_service
     else
