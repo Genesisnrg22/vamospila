@@ -1,0 +1,12 @@
+<h1>Carrito de compras</h1>
+
+<% if @line_items.empty? %>
+  <h2>No hay nada agregado a tu carrito</h2>
+<% else %>
+  <%= @line_items.each do |element| %>
+    <%= element.service.title %>
+    <%= element.qtty %>
+    <%= element.price %>
+  <% end %>
+<% end %>
+<%= console %>
