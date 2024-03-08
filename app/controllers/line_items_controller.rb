@@ -4,6 +4,7 @@ class LineItemsController < ApplicationController
   before_action :set_cart, only: create
 
   def index
+    @lineitems = LineItem.all
   end
 
   def new
