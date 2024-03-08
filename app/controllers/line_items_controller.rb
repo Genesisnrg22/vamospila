@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   skip_before_action :authenticate_user!
   include CurrentCart
-  before_action :set_cart, only: create
+  before_action :set_cart, only: :create
 
   def index
   end
@@ -10,7 +10,7 @@ class LineItemsController < ApplicationController
   end
 
   def create
-    @cart
+    @cart = set_cart
   end
 
   def show

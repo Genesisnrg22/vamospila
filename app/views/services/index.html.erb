@@ -1,1 +1,16 @@
 <h1>Estás en el index de tu página</h1>
+
+<% @services.each do |service| %>
+  <div class="mt-3">
+    <h2><%= service.title %></h2>
+    <p>Dueño: <%= service.user.first_name %></p>
+    <div>
+      <% service.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
+    <p>Description: <%= service.description %></p>
+  </div>
+<% end %>
+
+<%= console %>
