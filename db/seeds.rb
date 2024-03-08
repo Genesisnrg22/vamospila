@@ -9,27 +9,29 @@
 #   end
 require "open-uri"
 
-
 Order.destroy_all
 LineItem.destroy_all
 Service.destroy_all
 User.destroy_all
 
-puts "creando usuarios"
+puts "######################## Creando Usuarios ########################"
 
-cart = Cart.create!
+cart1 = Cart.create!
+cart2 = Cart.create!
 
-user = User.new(email: "cristopher@gmail.com",
-                password: "123456",
-                first_name: "Cristopher",
-                last_name: "Odreman",
-                phone: "+584143007592",
-                dni: "V-26809655",
-                nationality: "Venezolano",
-                address: "Av Caracas, Caracas")
+user1 = User.new(email: "cristopher@gmail.com",
+                 password: "123456",
+                 first_name: "Cristopher",
+                 last_name: "Odreman",
+                 phone: "+584143007592",
+                 dni: "V-26809655",
+                 nationality: "Venezolano",
+                 address: "Av Caracas, Caracas")
 file = URI.open("https://avatars.githubusercontent.com/u/134723849?v=4")
-user.photo.attach(io: file, filename: "cristopher.png", content_type: "image/png")
-user.save!
+user1.photo.attach(io: file, filename: "cristopher.png", content_type: "image/png")
+user1.save!
+
+puts "Usuario Cristopher creado"
 
 user2 = User.new(email: "genesis@gmail.com",
                  password: "123456",
@@ -43,6 +45,8 @@ file = URI.open("https://avatars.githubusercontent.com/u/107373693?v=4")
 user2.photo.attach(io: file, filename: "genesis.png", content_type: "image/png")
 user2.save!
 
+puts "Usuario Genesis creado"
+
 user3 = User.new(email: "javier@gmail.com",
                  password: "123456",
                  first_name: "Javier",
@@ -54,6 +58,8 @@ user3 = User.new(email: "javier@gmail.com",
 file = URI.open("https://avatars.githubusercontent.com/u/123475777?v=4")
 user3.photo.attach(io: file, filename: "javier.png", content_type: "image/png")
 user3.save!
+
+puts "Usuario Javier creado"
 
 user4 = User.new(email: "jose@gmail.com",
                  password: "123456",
@@ -67,18 +73,20 @@ file = URI.open("https://avatars.githubusercontent.com/u/64622223?v=4")
 user4.photo.attach(io: file, filename: "jose.png", content_type: "image/png")
 user4.save!
 
+puts "Usuario Jose creado"
+
 puts "######################## Creando Productos ########################"
 
-service = Service.new(tipo: "Fullday",
-                      title: "Cayo Sombrero",
-                      price: 150,
-                      rating: 0,
-                      description: "Cayo Sombrero es el nombre de una isla del mar Caribe que pertenece al parque nacional Morrocoy, Es la isla más grande después de Punta Brava y una de las islas más populares del parque nacional. Posee una superficie aproximada de 35 hectáreas o 0,35 kilómetros cuadrados por lo que tiene una superficie un poco más pequeña que la Ciudad del Vaticano. Cuenta con dos playas grandes y un bosque de palmeras que ofrece sombra natural. Es equidistante de las poblaciones de Tucacas y Chichiriviche. Se encuentra en la parte más oriental del parque nacional Morrocoy, cerca de Cayo Pescadores y Playa Mayoral.",
-                      address: "Cayo Sombrero municipio Silva Tucacas Falcón",
-                      latitude: "10,883523",
-                      longitude: "-68,209566",
-                      date: "2024/10/23",
-                      user_id: user2.id)
+service1 = Service.new(service_type: "Fullday",
+                       title: "Cayo Sombrero",
+                       price: 150,
+                       rating: 0,
+                       description: "Cayo Sombrero es el nombre de una isla del mar Caribe que pertenece al parque nacional Morrocoy, Es la isla más grande después de Punta Brava y una de las islas más populares del parque nacional. Posee una superficie aproximada de 35 hectáreas o 0,35 kilómetros cuadrados por lo que tiene una superficie un poco más pequeña que la Ciudad del Vaticano. Cuenta con dos playas grandes y un bosque de palmeras que ofrece sombra natural. Es equidistante de las poblaciones de Tucacas y Chichiriviche. Se encuentra en la parte más oriental del parque nacional Morrocoy, cerca de Cayo Pescadores y Playa Mayoral.",
+                       address: "Cayo Sombrero municipio Silva Tucacas Falcón",
+                       latitude: "10,883523",
+                       longitude: "-68,209566",
+                       date: "2024/10/23",
+                       user_id: user2.id)
 photo_urls = [
   "https://i.pinimg.com/originals/93/8e/ca/938eca5d9fb12e6a05ac84a0d797055b.jpg",
   "https://www.info4camper.com/fotos/visitar/ve/large/photos-12115-19475-cayo_sombrero.jpg",
@@ -86,14 +94,14 @@ photo_urls = [
   "https://www.venelogia.com/uploads/2012/567_1121697134.jpg"
 ]
 photo_urls.each do |url|
-  service.photos.attach(io: URI.open(url), filename: "service1.jpg")
+  service1.photos.attach(io: URI.open(url), filename: "service1.jpg")
 end
 
-service.save!
+service1.save!
 
-puts "#{service.tipo} #{service.title} Creado"
+puts "#{service1.service_type} #{service1.title} Creado"
 
-service2 = Service.new(tipo: "Fullday",
+service2 = Service.new(service_type: "Fullday",
                        title: "Medanos de Coro",
                        price: 80,
                        rating: 0,
@@ -116,9 +124,9 @@ end
 
 service2.save!
 
-puts "#{service2.tipo} #{service2.title} Creado"
+puts "#{service2.service_type} #{service2.title} Creado"
 
-service3 = Service.new(tipo: "Fullday",
+service3 = Service.new(service_type: "Fullday",
                        title: "Parque Nacional Mochima",
                        price: 140,
                        rating: 0,
@@ -142,9 +150,9 @@ end
 
 service3.save!
 
-puts "#{service3.tipo} #{service3.title} Creado"
+puts "#{service3.service_type} #{service3.title} Creado"
 
-service4 = service.new(tipo: "Fullday",
+service4 = Service.new(service_type: "Fullday",
                        title: "Parque Nacional El Avila",
                        price: 50,
                        rating: 0,
@@ -169,9 +177,9 @@ end
 
 service4.save!
 
-puts "#{service4.tipo} #{service4.title} Creado"
+puts "#{service4.service_type} #{service4.title} Creado"
 
-service5 = Service.new(tipo: "Fullday",
+service5 = Service.new(service_type: "Fullday",
                        title: "Vereda del lago de Maracaibo",
                        price: 35,
                        rating: 0,
@@ -195,11 +203,11 @@ end
 
 service5.save!
 
-puts "#{service5.tipo} #{service5.title} Creado"
+puts "#{service5.service_type} #{service5.title} Creado"
 
-service6 = Service.new(tipo: "Fullday",
+service6 = Service.new(service_type: "Fullday",
                        title: "Brinca Este",
-                       price: price.sample,
+                       price: 30,
                        rating: 0,
                        description: "Somos el Parque de Trampolines más grande de Caracas. Nuestro objetivo es llevar la diversión de nuestros visitantes a otro nivel, donde el entretenimiento e imaginación los llevará a brincar tan alto como lo sueñen. En horario de martes de jueves de 11:00 de la mañana hasta las 8:00 de la noche, mientras que de viernes a domingo abre sus puertas hasta las 9:00 de la noche. Para las atracciones en el área de piscinas, trampolines y ninja park el peso máximo es de 150 kilos y la edad límite es de 65 años, el uso es bajo el riesgo de cada usuario. Son 2.100 metros cuadrados.",
                        address: "Eugenio Mendoza Con Calle Urdaneta, Caracas",
@@ -221,9 +229,9 @@ end
 
 service6.save!
 
-puts "#{service6.tipo} #{service6.title} Creado"
+puts "#{service6.service_type} #{service6.title} Creado"
 
-service7 = Service.new(tipo: "Fullday",
+service7 = Service.new(service_type: "Fullday",
                        title: "Colonia Tovar",
                        price: 80,
                        rating: 0,
@@ -247,9 +255,9 @@ end
 
 service7.save!
 
-puts "#{service7.tipo} #{service7.title} Creado"
+puts "#{service7.service_type} #{service7.title} Creado"
 
-service8 = Service.new(tipo: "Fullday",
+service8 = Service.new(service_type: "Fullday",
                        title: "Dunas Parque Acuático",
                        price: 60,
                        rating: 0,
@@ -273,9 +281,9 @@ end
 
 service8.save!
 
-puts "#{service8.tipo} #{service8.title} Creado"
+puts "#{service8.service_type} #{service8.title} Creado"
 
-service9 = Service.new(tipo: "Fullday",
+service9 = Service.new(service_type: "Fullday",
                        title: "Viaja al Salto Angel",
                        price: 500,
                        rating: 0,
@@ -299,9 +307,9 @@ end
 
 service9.save!
 
-puts "#{service9.tipo} #{service9.title} Creado"
+puts "#{service9.service_type} #{service9.title} Creado"
 
-service10 = Service.new(tipo: "Fullday",
+service10 = Service.new(service_type: "Fullday",
                         title: "Parque La Llovizna",
                         price: 350,
                         rating: 0,
@@ -325,9 +333,9 @@ end
 
 service10.save!
 
-puts "#{service10.tipo} #{service10.title} Creado"
+puts "#{service10.service_type} #{service10.title} Creado"
 
-service11 = Service.new(tipo: "Fullday",
+service11 = Service.new(service_type: "Fullday",
                         title: "La Venezuela de Antier",
                         price: 65,
                         rating: 0,
@@ -351,10 +359,10 @@ end
 
 service11.save!
 
-puts "#{service11.tipo} #{service11.title} Creado"
+puts "#{service11.service_type} #{service11.title} Creado"
 
 
-service12 = Service.new(tipo: "Fullday",
+service12 = Service.new(service_type: "Fullday",
                         title: "Parque El Agua",
                         price: 20,
                         rating: 0,
@@ -376,4 +384,33 @@ end
 
 service12.save!
 
-puts "#{service12.tipo} #{service12.title} Creado"
+puts "#{service12.service_type} #{service12.title} Creado"
+
+puts "######################## Creando Line_Items ########################"
+
+line_item1 = LineItem.create!(cart: cart1, service: service1, qtty: 1)
+line_item1.price = (line_item1.service.price * line_item1.qtty)
+
+line_item2 = LineItem.create!(cart: cart1, service: service7, qtty: 2)
+line_item2.price = (line_item2.service.price * line_item2.qtty)
+
+line_item3 = LineItem.create!(cart: cart1, service: service4, qtty: 1)
+line_item3.price = (line_item3.service.price * line_item3.qtty)
+
+line_item4 = LineItem.create!(cart: cart2, service: service2, qtty: 1)
+line_item4.price = (line_item4.service.price * line_item4.qtty)
+
+line_item5 = LineItem.create!(cart: cart2, service: service3, qtty: 1)
+line_item5.price = (line_item5.service.price * line_item5.qtty)
+
+puts "Creados Line_Items"
+
+puts "######################## Creando Orden ########################"
+
+order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
+
+line_item1.order = order1
+line_item2.order = order1
+line_item3.order = order1
+
+puts "Orden Creada"
