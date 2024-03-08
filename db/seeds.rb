@@ -76,7 +76,7 @@ service = Service.new(tipo: "Fullday",
                       latitude: "10,883523",
                       longitude: "-68,209566",
                       date: "2024/10/23",
-                      user_id: users2)
+                      user_id: users2.id)
 
 photo_urls = [
   "https://i.pinimg.com/originals/93/8e/ca/938eca5d9fb12e6a05ac84a0d797055b.jpg",
@@ -100,7 +100,7 @@ service2 = Service.new(tipo: "Fullday",
                        latitude: "11,035275",
                        longitude: "-68,404183",
                        date: "2024/10/4",
-                       user_id: users2)
+                       user_id: users2.id)
 photo_urls = [
   "https://secureservercdn.net/166.62.114.250/33t.d96.myftpupload.com/wp-content/uploads/2021/01/Medanos-de-Coro.jpg",
   "https://olaolatravel.com/wp/wp-content/uploads/2018/08/M%C3%A9danos.de_.Coro_.National.Park_.640.8081.jpg",
@@ -123,7 +123,7 @@ service3 = Service.new(tipo: "Fullday",
                        latitude: "10.346384",
                        longitude: "-64.340658",
                        date: "2024/07/23",
-                       user_id: users2)
+                       user_id: users2.id)
 photo_urls = [
   "https://th.bing.com/th/id/OIP.MfUTrDVMYAZ3bHIUC5FxvQHaES?rs=1&pid=ImgDetMain",
   "https://1.bp.blogspot.com/-N97k0OBr4Ik/V-BL1N30VmI/AAAAAAAADG4/psuqHTkomm0QyYcQGrc99S8s8F7iiRunACLcB/s1600/3373948.jpg",
@@ -146,7 +146,7 @@ service4 = service.new(tipo: "Fullday",
                        latitude: "10,557388",
                        longitude: "-66,860008",
                        date: "2024/07/6",
-                       user_id: users2)
+                       user_id: users2.id)
 photo_urls = [
   "https://th.bing.com/th/id/OIP.bujQVTBG40hkTuVOaYdrlAHaE-?rs=1&pid=ImgDetMain",
   "https://media-cdn.tripadvisor.com/media/photo-s/04/37/60/01/parque-nacional-el-avila.jpg",
@@ -170,7 +170,7 @@ service5 = Service.new(tipo: "Fullday",
                        latitude: "10,663100",
                        longitude: "-71,594261",
                        date: "2024/09/23",
-                       user_id: users2)
+                       user_id: users2.id)
 photo_urls = [
   "https://th.bing.com/th/id/R.b907d9db530e862937a14a5c39fefb2a?rik=ZKVavG5AVe%2f5fw&pid=ImgRaw&r=0",
   "https://1.bp.blogspot.com/-yAgfSBWfGww/TitqR8L7huI/AAAAAAAAA5c/S9XU__XzUyM/s1600/vereda+del+lago.jpg",
@@ -193,7 +193,7 @@ service6 = Service.new(tipo: "Fullday",
                        latitude: "10,489473",
                        longitude: "-66,826347",
                        date: "2024/12/5",
-                       user_id: users2)
+                       user_id: users2.id)
 photo_urls = [
   "https://gbvm.knoios.com/mmedia/19605/brinca-este-una-nueva-opcion-para-divertirse-en-caracas-a-un-buen-precio-11311.jpg",
   "https://th.bing.com/th/id/R.c4aaf5ff94d9bcedd43e2228741afd46?rik=JvA3nZs92ieS0A&pid=ImgRaw&r=0",
@@ -216,7 +216,7 @@ service7 = Service.new(tipo: "Fullday",
                        latitude: "10,374700",
                        longitude: "-67,323530",
                        date: "2024/05/05",
-                       user_id: users1)
+                       user_id: user1.id)
 photo_urls = [
   "https://i.dailymail.co.uk/i/pix/2016/02/02/14/30CF782500000578-3428233-image-a-73_1454422024809.jpg",
   "https://th.bing.com/th/id/OIP.q0lcyB9yaalh1Ltu-Y9z6QHaFF?pid=ImgDet&w=474&h=325&rs=1",
@@ -238,7 +238,7 @@ service8 = Service.new(tipo: "Fullday",
                        latitude: "10,214940",
                        longitude: "-67,994919",
                        date: "2024/07/12",
-                       user_id: users1)
+                       user_id: user1.id)
 photo_urls = [
   "https://aquarama.net/wp-content/uploads/2019/02/Dunas-2.jpg",
   "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/489000/489112-beach-park-water-park.jpg",
@@ -255,12 +255,12 @@ service9 = Service.new(tipo: "Fullday",
                        title: "Viaja al Salto Angel",
                        price: 500,
                        rating: 0,
-                       description: "Viajar al Salto Ángel en el Parque Nacional Canaima es una aventura que te llenara de vida. Canaima es una de las principales atracciones de Venezuela, es la única laguna donde se unen cinco saltos, aquí se encontraras la caída de agua más alta del mundo. Auyan-tepuy o Auyantepuy (En lengua pemón "Montaña Del Diablo"), Es el tepuy más grande y famoso de Venezuela. Desde su cima nace la cascada más grande del mundo, con una altura de 979 metros es 15 veces más grande que las Cataratas del Niágara y tres veces más grande que la Torre Eiffel, en París.",
+                       description: "Viajar al Salto Ángel en el Parque Nacional Canaima es una aventura que te llenara de vida. Canaima es una de las principales atracciones de Venezuela, es la única laguna donde se unen cinco saltos, aquí se encontraras la caída de agua más alta del mundo. Auyan-tepuy o Auyantepuy (En lengua pemón 'Montaña Del Diablo'), Es el tepuy más grande y famoso de Venezuela. Desde su cima nace la cascada más grande del mundo, con una altura de 979 metros es 15 veces más grande que las Cataratas del Niágara y tres veces más grande que la Torre Eiffel, en París.",
                        address: "Parque Nacional Canaima, en el estado Bolívar, Venezuela.",
                        latitude: "5,970056",
                        longitude: "-62,536220",
                        date: "2024/08/30",
-                       user_id: users1)
+                       user_id: user1.id)
 photo_urls = [
   "https://th.bing.com/th/id/OIP.w9sFD637qPVWvqSP-XV39gHaE8?rs=1&pid=ImgDetMain",
   "https://th.bing.com/th/id/OIP.cQ3t_wS2fqGNjh4k7UPh0QHaFj?rs=1&pid=ImgDetMain",
@@ -282,7 +282,7 @@ service10 = Service.new(tipo: "Fullday",
                         latitude: "8,329123",
                         longitude: "-62,660648",
                         date: "2024/06/23",
-                        user_id: users1)
+                        user_id: user1.id)
 photo_urls = [
   "https://3.bp.blogspot.com/--8TLXM7Yx4k/Wa6bjIcF0zI/AAAAAAAAEDg/_DL1tt3k-9EIjiIHi-faRBXXf2oGUJUBACLcBGAs/s1600/rMAnny1La3YGPQFJkXy7EXWMn.jpg",
   "https://th.bing.com/th/id/R.61582eed273c936f242f78a014eedaf1?rik=OJlWeUMiqKvB7g&pid=ImgRaw&r=0",
@@ -304,7 +304,7 @@ service11 = Service.new(tipo: "Fullday",
                         latitude: "8,593546",
                         longitude: "-71,233902",
                         date: "2024/06/5",
-                        user_id: users1)
+                        user_id: user1.id)
 photo_urls = [
   "https://th.bing.com/th/id/OIP.S4LSyIMm8zx_nb9RJbblqwHaDT?rs=1&pid=ImgDetMain",
   "https://media-cdn.tripadvisor.com/media/photo-s/0a/b9/7d/df/la-muleraexcelenteiiii.jpg",
@@ -325,7 +325,7 @@ service12 = Service.new(tipo: "Fullday",
                         description: "En este parque se encuentra el tobogán más alto de Venezuela, de 18 metros, el Churún Merú. Todos los toboganes del parque tienen nombres indígenas y Churún Merú, el nombre indígena del 'Salto Angel', es apropiado para este tobogán, solo apto para los más osados. Pero, en el Parque el Agua, hay para todos los gustos. Además del Churún Merú, hay cuatro toboganes con distintos niveles de emoción.",
                         address: "31 Av. 31 de Julio Barco de Ent a Parque el Agua, Porlamar, Isla de Margarita",
                         date: "",
-                        user_id: users1)
+                        user_id: user1.id)
 photo_urls = [
   "https://www.ohlaliving.com/wp-content/uploads/2016/03/aquarama-benicassim-1.jpg",
   "https://i.pinimg.com/736x/3c/b0/9e/3cb09e25f4cb7ee9537c9445bd9d06b5--hotel-parque-margarita.jpg",
