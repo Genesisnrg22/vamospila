@@ -10,6 +10,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    @line_item = LineItem.new
   end
 
   def create

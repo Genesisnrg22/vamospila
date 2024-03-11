@@ -3,10 +3,15 @@
 <% if @line_items.empty? %>
   <h2>No hay nada agregado a tu carrito</h2>
 <% else %>
-  <%= @line_items.each do |element| %>
+  <% @line_items.each do |element| %>
     <%= element.service.title %>
     <%= element.qtty %>
     <%= element.price %>
+    <div class="mb-2">
+      <%= link_to line_item_path(element), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        Eliminar del carrito <i class="fa-solid fa-trash" style="color:red"></i>
+      <% end %>
+    </div>
   <% end %>
 <% end %>
 <%= console %>

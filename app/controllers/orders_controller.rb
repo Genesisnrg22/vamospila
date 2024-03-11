@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
-  def index
-    @orders = Order.all
-  end
+  include CurrentCart
+  before_action :set_cart, only: [:new]
 
   def new
+    @line_item = LineItem.where(cart: @cart.id)
     @order = Order.new
   end
 
