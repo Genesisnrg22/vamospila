@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   resources :line_items, only: [:index, :destroy]
   # Defines the root path route ("/")
   # root "posts#index"
-
 end
