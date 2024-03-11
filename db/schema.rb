@@ -70,35 +70,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_192213) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "tipo"
-    t.text "address"
-    t.string "title"
-    t.float "price"
-    t.float "rating"
-    t.date "date"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "description"
-    t.index ["user_id"], name: "index_products_on_user_id"
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.float "final_price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.text "comment"
-    t.float "rating"
-    t.bigint "purchase_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["purchase_id"], name: "index_reviews_on_purchase_id"
-  end
-
   create_table "services", force: :cascade do |t|
     t.string "title"
     t.float "price"
@@ -139,6 +110,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_192213) do
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "services"
   add_foreign_key "orders", "users"
-  add_foreign_key "reviews", "purchases"
   add_foreign_key "services", "users"
 end
