@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :line_items, only: [:new, :create]
   end
 
+  resources :line_items do
+    resource :orders, only: [:update]
+  end
+
   resources :line_items, only: [:index, :destroy]
 
   resources :carts, only: [:show] do
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   end
   # Defines the root path route ("/")
   # root "posts#index"
-
+  post "line_items/minus", to: "line_items#minus"
+  post "line_items/add", to: "line_items#add"
   # post "line_items", to: "line_items#create"
 end

@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   skip_before_action :authenticate_user!
   include CurrentCart
-  before_action :set_cart, only: [:create, :index]
+  before_action :set_cart, only: [:create, :index, :minus, :add]
 
   def index
     cart = @cart
@@ -27,6 +27,20 @@ class LineItemsController < ApplicationController
   def show
     @line_item = set_line_item
     @photo = @line_item.photo
+  end
+
+  def minus
+    @line_item = LineItem.find(params[:item_id])
+    @line_item.qtty -= 1 if @line_item.qtty > 1
+    @line_item.save!
+    redirect_to @cart
+  end
+
+  def add
+    @line_item = LineItem.find(params[:item_id])
+    @line_item.qtty += 1 if @line_item.qtty < 10
+    @line_item.save!
+    redirect_to @cart
   end
 
   def destroy

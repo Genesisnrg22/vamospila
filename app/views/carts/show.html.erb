@@ -13,7 +13,7 @@
     <% @line_item.each do |item| %>
         <tr>
           <th scope="row"><%= item.service.title %></th>
-          <td><%= item.qtty %></td>
+          <td><%= button_to "-", line_items_minus_path(item_id: item.id) %> <%= item.qtty %> <%= button_to "+", line_items_add_path(item_id: item.id) %></td>
           <td><%= item.price %></td>
           <td><%= item.price * item.qtty %></td>
         </tr>
