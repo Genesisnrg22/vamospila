@@ -1,24 +1,28 @@
 <h1>Carrito de Compras</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Actividad</th>
-      <th scope="col">Personas</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Total</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @line_item.each do |item| %>
+<% if params[:id].to_i == @cart.id %>
+  <table class="table">
+    <thead>
       <tr>
-        <th scope="row"><%= item.service.title %></th>
-        <td><%= item.qtty %></td>
-        <td><%= item.price %></td>
-        <td><%= item.price * item.qtty %></td>
+        <th scope="col">Actividad</th>
+        <th scope="col">Personas</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Total</th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @line_item.each do |item| %>
+        <tr>
+          <th scope="row"><%= item.service.title %></th>
+          <td><%= item.qtty %></td>
+          <td><%= item.price %></td>
+          <td><%= item.price * item.qtty %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "Pagar", new_cart_order_path(params[:id]) %>
+  <%= link_to "Pagar", new_cart_order_path(params[:id]) %>
+<% else %>
+  <p>El carrito no existe</p>
+<% end %>
+<%= console %>
