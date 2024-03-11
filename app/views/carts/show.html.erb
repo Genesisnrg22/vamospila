@@ -7,16 +7,19 @@
         <th scope="col">Personas</th>
         <th scope="col">Precio</th>
         <th scope="col">Total</th>
+        <th scope="col">Eliminar</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
     <% @line_item.each do |item| %>
         <tr>
-          <th scope="row"><%= item.service.title %></th>
-          <td><%= button_to "-", line_items_minus_path(item_id: item.id) %> <%= item.qtty %> <%= button_to "+", line_items_add_path(item_id: item.id) %></td>
+          <th scope="row"><%= link_to item.service.title, service_path(item.service) %></th>
+          <td class="d-flex"><%= button_to "-", line_items_minus_path(item_id: item.id) %> <strong class="mx-2"><%= item.qtty %></strong> <%= button_to "+", line_items_add_path(item_id: item.id) %></td>
           <td><%= item.price %></td>
           <td><%= item.price * item.qtty %></td>
+          <td><%= link_to line_item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%> <i class='fas fa-trash' style='color: #fd7272;'></i> <% end %></td>
         </tr>
+
     <% end %>
     </tbody>
   </table>
