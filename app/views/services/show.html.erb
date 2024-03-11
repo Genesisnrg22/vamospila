@@ -24,7 +24,7 @@
     <div class="col-4 text-center">
       <div class="card-category p-3">
         <%= simple_form_for [@service, @line_item], method: :post do |f| %>
-          <%= f.input :qtty, label: "Cantidad de personas", class:"", as: :numeric%>
+          <%= f.input :qtty, label: "Cantidad de personas", class:"", as: :numeric, input_html: {placeholder: 1}%>
           <%#= f.hidden_field :service_id, input_html: {value: params[:service_id]}, as: :numeric %>
           <%= f.button :submit, class: 'btn btn-success', value:"Añadir al carrito"%>
         <% end %>

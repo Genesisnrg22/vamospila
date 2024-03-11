@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
   #post "line_items", to: "line_items#create"
+
+  # post "line_items", to: "line_items#create"
 end

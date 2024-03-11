@@ -21,7 +21,7 @@ class LineItemsController < ApplicationController
   def create
     @service = Service.find(params[:service_id].to_i)
     @line_item = LineItem.create(service: @service, qtty: line_item_params[:qtty], cart: @cart, price: @service.price)
-    redirect_to @service
+    redirect_to cart_path(@cart)
   end
 
   def show
