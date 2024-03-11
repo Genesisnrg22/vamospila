@@ -1,32 +1,35 @@
-<h1>Carrito de Compras</h1>
-<% if params[:id].to_i == @cart.id %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Actividad</th>
-        <th scope="col">Personas</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Total</th>
-        <th scope="col">Eliminar</th>
-      </tr>
-    </thead>
-    <tbody >
-    <% @line_item.each do |item| %>
+  <div class="my-4">
+    <h1>Carrito de Compras</h1>
+  </div>
+  <% if @line_items.nil? || @line_items.empty? || params[:id].to_i != @cart.id %>
+    <p>El carrito no existe</p>
+    <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-primary" %>
+  <% else %>
+    <table class="table">
+      <thead>
         <tr>
-          <th scope="row"><%= link_to item.service.title, service_path(item.service) %></th>
-          <td class="d-flex"><%= button_to "-", line_items_minus_path(item_id: item.id) %> <strong class="mx-2"><%= item.qtty %></strong> <%= button_to "+", line_items_add_path(item_id: item.id) %></td>
-          <td><%= item.price %></td>
-          <td><%= item.price * item.qtty %></td>
-          <td><%= link_to line_item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%> <i class='fas fa-trash' style='color: #fd7272;'></i> <% end %></td>
+          <th scope="col">Actividad</th>
+          <th scope="col">Personas</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Total</th>
+          <th scope="col">Eliminar</th>
         </tr>
-
-    <% end %>
-    </tbody>
-  </table>
-
-  <%= link_to "Pagar", new_cart_order_path(params[:id]) %>
-<% else %>
-  <p>El carrito no existe</p>
-<% end %>
-<%= link_to "Volver a todos los servicios", services_path, class:"btn btn-secondary" %>
-<%= console %>
+      </thead>
+      <tbody >
+        <% @line_items.each do |item| %>
+            <tr>
+              <th scope="row"><%= link_to item.service.title, service_path(item.service) %></th>
+              <td class="d-flex"><%= button_to "-", line_items_minus_path(item_id: item.id) %> <strong class="mx-2"><%= item.qtty %></strong> <%= button_to "+", line_items_add_path(item_id: item.id) %></td>
+              <td><%= item.price %></td>
+              <td><%= item.price * item.qtty %></td>
+              <td><%= link_to line_item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%> <i class='fas fa-trash' style='color: #fd7272;'></i> <% end %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between">
+      <%= link_to "Pagar", new_cart_order_path(params[:id]), class:"btn btn-success" %>
+      <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-primary" %>
+      <%= link_to "Eliminar Carrito", cart_path(params[:id]), class:"btn btn-secondary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
