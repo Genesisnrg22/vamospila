@@ -1,16 +1,14 @@
 <h1>Tu pedido del carrito <%= @cart.id %></h1>
 
 <div class="container">
-
   <div class="row justify-content-between">
-    <div class="col-5">
+    <div class="col-5 bg-white">
       <table class="table">
         <thead>
           <tr>
             <th scope="col">Actividad</th>
             <th scope="col">Personas</th>
             <th scope="col">Precio</th>
-            <th scope="col">Total</th>
           </tr>
         </thead>
         <tbody>
@@ -25,8 +23,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col-5">
-      Tarjeta de pago
-    </div>
+    <div class="col-6">
       <%= render "checkout" %>
+    </div>
  <!-- END: .modal -->

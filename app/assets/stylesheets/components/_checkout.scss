@@ -72,7 +72,7 @@ ul li:hover {
   width:100%;
 }
 .half-input-table td:first-of-type {
-  border-right:10px solid #4488dd;
+  border-right:10px solid, rgba(255,255,255,0.1);
   width:50%;
 }
 .window {
@@ -143,11 +143,11 @@ ul li:hover {
   font-size:1.2rem;
   color:#fff;
   cursor:pointer;
-  position:absolute;
+  position:static;
   bottom:25px;
-  width:calc(100% - 50px);
   -webkit-transition:all .2s ease;
           transition:all .2s ease;
+  margin-bottom: 15px;
 }
 .pay-btn:hover {
   background:#22a877;
@@ -186,9 +186,8 @@ ul li:hover {
   margin-right:auto;
 }
 .credit-info {
-  background:#4488dd;
+  background:#3d4a58;
   height:100%;
-  width:50%;
   color:#eee;
   -webkit-box-pack:center;
   -webkit-justify-content:center;
@@ -272,4 +271,8 @@ ul li:hover {
   .pay-btn {
     border-radius:0px;
   }
+}
+
+.table {
+  --bs-table-bg: white;
 }
