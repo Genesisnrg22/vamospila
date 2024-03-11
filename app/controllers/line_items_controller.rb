@@ -14,21 +14,14 @@ class LineItemsController < ApplicationController
   end
 
   def new
-    @service = Service.find(params[:service_id])
+    @service = set_service
     @line_item = LineItem.new
   end
 
   def create
-    @service = Service.find(params[:service_id])
-    @qtty = line_item_params[:qtty].to_i
-    @line_item = LineItem.new(service: @service, qtty: @qtty)
-    @line_item.price = @service.price * @qtty
-    @line_item.cart = @cart
-    if @line_item.save
-      redirect_to @line_items, notice: 'Se ha añadido con éxito tu producto.'
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @service = Service.find(params[:service_id].to_i)
+    @line_item = LineItem.create(service: @service, qtty: line_item_params[:qtty], cart: @cart, price: @service.price)
+    redirect_to @service
   end
 
   def show
@@ -46,10 +39,7 @@ class LineItemsController < ApplicationController
   private
 
   def line_item_params
-    params.require(:line_item).permit(:qtty)
+    params.require(:line_item).permit(:qtty, :service_id)
   end
 
-  def set_line_item
-    @line_item = LineItem.find(params[:id])
-  end
 end
