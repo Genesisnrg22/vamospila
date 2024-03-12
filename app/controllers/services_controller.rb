@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :set_cart, only: [:index, :new, :show, :edit]
   skip_before_action :authenticate_user!, only: %i[index show ]
 
   def index

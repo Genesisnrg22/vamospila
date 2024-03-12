@@ -1,27 +1,22 @@
-<style>
-        
-</style>
-
-
   <div id="container" class="d-flex justify-content-center align-item-center">
-        <div id="profilecontainer" class="text-center mt-5" >
-            <div id="part1">
-                <%= cl_image_tag @user.photo.key, class:"img-fluid mt-5", id:"person"  %>
-                <p ><%= @user.first_name %> <%= @user.last_name %></p>
+    <div id="profilecontainer" class="text-center mt-5" >
+        <div id="part1">
+            <%= cl_image_tag @user.photo.key, class:"img-fluid mt-5", id:"person"  %>
+            <p ><%= @user.first_name %> <%= @user.last_name %></p>
 
-                <div class="d-flex justify-content-center">
-                    <p ><%= @user.phone %> |</p>
-                    <p ><%= @user.dni %> |</p>
-                    <p ><%= @user.nationality %></p>
-                </div>
-
-                <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-                <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+            <div class="d-flex justify-content-center">
+                <p ><%= @user.phone %> |</p>
+                <p ><%= @user.dni %> |</p>
+                <p ><%= @user.nationality %></p>
             </div>
-            <div id="part2">
 
-            </div>
+            <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
+        <div id="part2">
 
         </div>
+
     </div>
+  </div>
