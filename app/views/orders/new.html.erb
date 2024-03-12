@@ -1,34 +1,36 @@
-<div class="row justify-content-between mt-5">
-  <div class="tabla col-5 bg-white w-50 p-3 align-items-center">
-    <div class="text-center"><h2>Tu pedido</h2></div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Actividad</th>
-          <th scope="col">Personas</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @order.total_price = 0 %>
-      <% @line_item.each do |item| %>
-        <tr>
-          <th scope="row"><%= item.service.title %></th>
-          <td><%= item.qtty %></td>
-          <td><%= item.price %></td>
-          <td><%= item.price * item.qtty %></td>
-        </tr>
-        <% @order.total_price += item.price * item.qtty %>
-      <% end %>
-      </tbody>
-    </table>
-    <div class="text-end">
-      <h3>Total: <%= @order.total_price %></h3>
+<div class="container">
+  <div class="row justify-content-between mt-5">
+    <div class="tabla col-5 w-50 p-3 align-items-center">
+      <div class="text-center"><h2>Tu pedido</h2></div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Actividad</th>
+            <th scope="col">Personas</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @order.total_price = 0 %>
+        <% @line_item.each do |item| %>
+          <tr>
+            <th scope="row"><%= item.service.title %></th>
+            <td><%= item.qtty %></td>
+            <td><%= item.price %></td>
+            <td><%= item.price * item.qtty %></td>
+          </tr>
+          <% @order.total_price += item.price * item.qtty %>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="text-end">
+        <h3>Total: <%= @order.total_price %></h3>
+      </div>
     </div>
-  </div>
-  <div class="col-6">
-    <%= render "checkout" %>
+    <div class="col-6">
+      <%= render "checkout" %>
+    </div>
   </div>
 </div>
 

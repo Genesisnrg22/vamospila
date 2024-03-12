@@ -12,6 +12,7 @@ require "open-uri"
 Order.destroy_all
 LineItem.destroy_all
 Service.destroy_all
+Cart.destroy_all
 User.destroy_all
 
 puts "######################## Creando Usuarios ########################"
@@ -94,7 +95,7 @@ photo_urls = [
   "https://res.cloudinary.com/dden4e24f/image/upload/v1710194016/development/3or2rk02lv7ahpw3ekcd3b1472jb.jpg"
 ]
 photo_urls.each do |url|
-  service1.photos.attach(io: url, filename: "service1.jpg")
+  service1.photos.attach(io: URI.open(url), filename: "service1.jpg")
 end
 
 service1.save!
@@ -402,19 +403,19 @@ line_item4.price = (line_item4.service.price * line_item4.qtty)
 line_item5 = LineItem.create!(cart: cart2, service: service3, qtty: 1)
 line_item5.price = (line_item5.service.price * line_item5.qtty)
 
-puts "Creados Line_Items"
+puts "Line_Items Creados"
 
-puts "######################## Creando Orden ########################"
+# puts "######################## Creando Orden ########################"
 
-order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
+# order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
 
-line_item1.order = order1
-line_item1.update(cart_id: nil)
-line_item2.order = order1
-line_item2.update(cart_id: nil)
-line_item3.order = order1
-line_item3.update(cart_id: nil)
+# line_item1.order = order1
+# line_item1.update(cart_id: nil)
+# line_item2.order = order1
+# line_item2.update(cart_id: nil)
+# line_item3.order = order1
+# line_item3.update(cart_id: nil)
 
-cart1.destroy!
+# cart1.destroy!
 
-puts "Orden Creada"
+# puts "Orden Creada"
