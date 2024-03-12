@@ -1,40 +1,25 @@
-    <section style="padding-top: 7rem;">
-        <div class="bg-holder" style="background-image:url(<%= asset_path 'hero-bg.svg' %>);">
-        </div>
-        <!--/.bg-holder-->
-
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-md-4 col-lg-5 order-0 order-md-1 text-end">
-                <div class="pt-7 pt-md-0 hero-img">
-                  <%= image_tag("hero-img.png")%>
-                </div>
+            <div class="col-md-4 col-lg-6 order-0 order-md-1 text-end">
+                  <%= image_tag "hero-img.png", class:"pt-7 pt-md-0 hero-img"%>
             </div>
-            <div class="col-md-7 col-lg-6 text-md-left py-6">
-              <h4 class="fw-bold text-danger mb-3">Best Destinations around the world</h4>
-              <h1 class="hero-title">Travel, enjoy and live a new and full life</h1>
-              <p class="mb-4 fw-medium">Built Wicket longer admire do barton vanity itself do in it.<br class="d-none d-xl-block" />Preferred to sportsmen it engrossed listening. Park gate<br class="d-none d-xl-block" />sell they west hard for the.</p>
-              <div class="text-md-left"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#!" role="button">Find out more</a>
-                <div class="w-100 d-block d-md-none"></div><a href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo"><span class="btn btn-danger round-btn-lg rounded-circle me-3 danger-btn-shadow"> <%= image_tag("play.svg")  %></span></a><span class="fw-medium">Play Demo</span>
-                <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                      <iframe class="rounded" style="width:100%;max-height:500px;" height="500px" src="https://www.youtube.com/embed/_lhdhL4UDIo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
-                    </div>
-                  </div>
-                </div>
+            <div class="col-md-7 col-lg-6 text-md-start py-6">
+              <h4 class="fw-bold text-danger mb-3">Busca tu próximo destino</h4>
+              <h1> Y encuentre el mejor paquete que se adapte a ti </h1>
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       <!-- TESTIMONIAL OPEN ============================-->
       <!-- ============================================-->
 
-     <div class="d-flex align-items-center py-5 mh-100">
+     <div class="d-flex align-items-center py-5 mh-100 position-relative">
         <a class="carousel-control-prev text-decoration-none " href="#mycarousel" role="button" data-bs-slide="prev">
-            <div class="d-flex flex-column justify-content-center me-2 ms-auto left">Prev<span class="fas fa-arrow-left"></span> </div> <span class="sr-only">Previous</span>
+          <div class="position-absolute d-flex flex-column justify-content-center me-2 ms-auto left top-0">Prev<span class="fas fa-arrow-left"></span> </div> <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-decoration-none" href="#mycarousel" role="button" data-bs-slide="next">
+          <div class="d-flex flex-column justify-content-center right ms-2 me-auto position-absolute right-0 top-0"> Next <span class="fas fa-arrow-right"></span> </div> <span class="sr-only">Next</span>
         </a>
         <div class="container">
             <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
@@ -48,13 +33,13 @@
                         <div class="row">
                             <div class="col-lg-5">
                               <div class="d-flex justify-content-center mb-4">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                                <img src="https://media-cdn.tripadvisor.com/media/photo-l/1d/20/e8/0c/lulitasampedrina.jpg"
                                   class="rounded-circle shadow-1-strong" width="150" height="150" />
                               </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="d-flex flex-column justify-content-center my-5 px-3 img-text">
-                                    <p class="review">"We have received the best service from this person. We will definitely hire for our next project."</p>
+                                    <p class="review">"La plataforma es llevadera y siempre consigo precios buenos. Mi experiencia en otra ocasiones que he alquilado con ustedes es muy buena y nunca he tenido problemas. Gracias 🙂"</p>
                                         <ul class="list-unstyled d-flex justify-content-right mb-0">
                                             <li>
                                               <i class="fas fa-star fa-sm text-warning"></i>
@@ -73,9 +58,9 @@
                                             </li>
                                         </ul>
                                     <div class="person">
-                                        <p class="m-0">Jason Walker</p>
+                                        <p class="m-0">Celia Cruz</p>
                                     </div>
-                                    <p class="designation">Graphics Designer</p>
+                                    <p class="designation">Analista Contable</p>
                                 </div>
                             </div>
 
@@ -85,13 +70,13 @@
                         <div class="row">
                             <div class="col-lg-5">
                               <div class="d-flex justify-content-center mb-4">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                                <img src="https://media-cdn.tripadvisor.com/media/photo-l/06/84/93/b5/edgardo-z.jpg"
                                   class="rounded-circle shadow-1-strong" width="150" height="150" />
                               </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class=" d-flex flex-column justify-content-center my-5 px-3 img-text">
-                                    <p class="review">"We have received the best service from this person. We will definitely hire for our next project."</p>
+                                    <p class="review">"Tuve q modificar mi reservación porque la línea aerea me canceló un vuelo.Sareth Flores se encargó de hacerme el cambio rápido mientras hablábamos por teléfono y hasta me sobró dinero con la nueva reservación. Excelente"</p>
                                           <ul class="list-unstyled d-flex justify-content-right mb-0">
                                             <li>
                                               <i class="fas fa-star fa-sm text-warning"></i>
@@ -110,9 +95,9 @@
                                             </li>
                                           </ul>
                                     <div class="person">
-                                        <p class="m-0">Mike Jones</p>
+                                        <p class="m-0">Pedro Gomez</p>
                                     </div>
-                                    <p class="designation">Human Resource Manager</p>
+                                    <p class="designation">Gerente</p>
                                 </div>
                             </div>
 
@@ -122,17 +107,14 @@
                         <div class="row">
                             <div class="col-lg-5 ">
                               <div class="d-flex justify-content-center mb-4">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                                <img src="https://media-cdn.tripadvisor.com/media/photo-l/1a/f6/eb/43/default-avatar-2020-11.jpg"
                                   class="rounded-circle shadow-1-strong" width="150" height="150" />
                               </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class=" d-flex flex-column justify-content-center my-5 px-3 img-text">
-                                    <p class="review">"We have received the best service from this person. We will definitely hire for our next project."</p>
+                                    <p class="review">"Fue super profesional y amable. Recibi un excelente servicio y pude completar mi solicitud gracias a su ayuda."</p>
                                       <ul class="list-unstyled d-flex justify-content-right mb-0">
-                                            <li>
-                                              <i class="fas fa-star fa-sm text-warning"></i>
-                                            </li>
                                             <li>
                                               <i class="fas fa-star fa-sm text-warning"></i>
                                             </li>
@@ -147,9 +129,9 @@
                                             </li>
                                       </ul>
                                     <div class="person">
-                                        <p class="m-0">Stephen Jones</p>
+                                        <p class="m-0">Carlos Zambrano</p>
                                     </div>
-                                    <p class="designation">Web Developer</p>
+                                    <p class="designation">Desarollador</p>
                                 </div>
                             </div>
 
@@ -158,9 +140,6 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-next text-decoration-none " href="#mycarousel" role="button" data-bs-slide="next">
-            <div class="d-flex flex-column justify-content-center right ms-2 me-auto"> Next <span class="fas fa-arrow-right"></span> </div> <span class="sr-only">Next</span>
-        </a>
     </div>
 
       <!-- PARTNERS OPEN ============================-->

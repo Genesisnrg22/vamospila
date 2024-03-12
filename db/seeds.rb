@@ -231,31 +231,31 @@ service6.save!
 
 puts "#{service6.service_type} #{service6.title} Creado"
 
-service7 = Service.new(service_type: "Fullday",
-                       title: "Colonia Tovar",
-                       price: 80,
-                       rating: 0,
-                       description: "La Colonia Tovar es una ciudad venezolana, capital del Municipio Tovar, en el Estado Aragua. Fue fundada el 8 de abril de 1843 por un grupo de inmigrantes alemanes provenientes del entonces Gran Ducado de Baden (luego incorporado a Alemania). Se caracteriza por mantener la impronta cultural de su origen, por lo que es llamada «la Alemania del Caribe» o «El Pueblo Alemán de Venezuela».",
-                       address: "Colonia Tovar, Estado Aragua, Venezuela",
-                       latitude: "10,374700",
-                       longitude: "-67,323530",
-                       date: "2024/05/05",
-                       user_id: user1.id)
+# service7 = Service.new(service_type: "Fullday",
+#                        title: "Colonia Tovar",
+#                        price: 80,
+#                        rating: 0,
+#                        description: "La Colonia Tovar es una ciudad venezolana, capital del Municipio Tovar, en el Estado Aragua. Fue fundada el 8 de abril de 1843 por un grupo de inmigrantes alemanes provenientes del entonces Gran Ducado de Baden (luego incorporado a Alemania). Se caracteriza por mantener la impronta cultural de su origen, por lo que es llamada «la Alemania del Caribe» o «El Pueblo Alemán de Venezuela».",
+#                        address: "Colonia Tovar, Estado Aragua, Venezuela",
+#                        latitude: "10,374700",
+#                        longitude: "-67,323530",
+#                        date: "2024/05/05",
+#                        user_id: user1.id)
 
-photo_urls = [
-  "https://i.dailymail.co.uk/i/pix/2016/02/02/14/30CF782500000578-3428233-image-a-73_1454422024809.jpg",
-  "https://th.bing.com/th/id/OIP.q0lcyB9yaalh1Ltu-Y9z6QHaFF?pid=ImgDet&w=474&h=325&rs=1",
-  "https://www.ajanelalaranja.com/wp-content/uploads/2013/05/Campos-com-crianca.jpg",
-  "https://th.bing.com/th/id/OIP.rGxuX8jgr4zRKBFW7EaHngHaFo?rs=1&pid=ImgDetMain"
-]
+# photo_urls = [
+#   #"https://i.dailymail.co.uk/i/pix/2016/02/02/14/30CF782500000578-3428233-image-a-73_1454422024809.jpg",
+#   #"https://th.bing.com/th/id/OIP.q0lcyB9yaalh1Ltu-Y9z6QHaFF?pid=ImgDet&w=474&h=325&rs=1",
+#   #"https://www.ajanelalaranja.com/wp-content/uploads/2013/05/Campos-com-crianca.jpg",
+#   #"https://th.bing.com/th/id/OIP.rGxuX8jgr4zRKBFW7EaHngHaFo?rs=1&pid=ImgDetMain"
+# ]
 
-photo_urls.each do |url|
-  service7.photos.attach(io: URI.open(url), filename: "service7.jpg")
-end
+# photo_urls.each do |url|
+#   service7.photos.attach(io: URI.open(url), filename: "service7.jpg")
+# end
 
-service7.save!
+# service7.save!
 
-puts "#{service7.service_type} #{service7.title} Creado"
+#puts "#{service7.service_type} #{service7.title} Creado"
 
 service8 = Service.new(service_type: "Fullday",
                        title: "Dunas Parque Acuático",
@@ -407,15 +407,15 @@ puts "Creados Line_Items"
 
 puts "######################## Creando Orden ########################"
 
-order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
+#order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
 
-line_item1.order = order1
-line_item1.update(cart_id: nil)
-line_item2.order = order1
-line_item2.update(cart_id: nil)
-line_item3.order = order1
-line_item3.update(cart_id: nil)
+# line_item1.order = order1
+# line_item1.update(cart_id: nil)
+# line_item2.order = order1
+# line_item2.update(cart_id: nil)
+# line_item3.order = order1
+# line_item3.update(cart_id: nil)
 
-cart1.destroy!
+# cart1.destroy!
 
 puts "Orden Creada"
