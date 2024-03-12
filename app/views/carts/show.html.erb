@@ -1,31 +1,46 @@
-<h1>Carrito de Compras</h1>
-<% if params[:id].to_i == @cart.id %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Actividad</th>
-        <th scope="col">Personas</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Total</th>
-        <th scope="col">Eliminar</th>
-      </tr>
-    </thead>
-    <tbody >
-    <% @line_item.each do |item| %>
-        <tr>
-          <th scope="row"><%= link_to item.service.title, service_path(item.service) %></th>
-          <td class="d-flex"><%= button_to "-", line_items_minus_path(item_id: item.id) %> <strong class="mx-2"><%= item.qtty %></strong> <%= button_to "+", line_items_add_path(item_id: item.id) %></td>
-          <td><%= item.price %></td>
-          <td><%= item.price * item.qtty %></td>
-          <td><%= link_to line_item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%> <i class='fas fa-trash' style='color: #fd7272;'></i> <% end %></td>
-        </tr>
-
-    <% end %>
-    </tbody>
-  </table>
-
-  <%= link_to "Pagar", new_cart_order_path(params[:id]) %>
-<% else %>
-  <p>El carrito no existe</p>
-<% end %>
-<%= link_to "Volver a todos los servicios", services_path, class:"btn btn-secondary" %>
+  <div class="container" id="show_cart">
+    <div class="row">
+      <div class="col-md-12 my-4">
+        <h1>Carrito de Compras</h1>
+      </div>
+      <% if @line_items.nil? || @line_items.empty? || params[:id].to_i != @cart.id %>
+        <p>El carrito no existe</p>
+        <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-primary" %>
+      <% else %>
+        <div class="col-md-8">
+          <table class="table col-8">
+            <thead>
+              <tr>
+                <th scope="col">Actividad</th>
+                <th scope="col" class="text-center">Personas</th>
+                <th scope="col" class="text-center">Precio</th>
+                <th scope="col" class="text-center">Total</th>
+                <th scope="col" class="text-center">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody >
+              <% @line_items.each do |item| %>
+                  <tr>
+                    <th scope="row"><%= link_to item.service.title, service_path(item.service) %></th>
+                    <td class="d-flex align-items-center justify-content-center"><%= button_to "-", line_items_minus_path(item_id: item.id) %> <strong class="mx-2"><%= item.qtty %></strong> <%= button_to "+", line_items_add_path(item_id: item.id) %></td>
+                    <td class="text-center"><%= item.price %></td>
+                    <td class="text-center"><%= item.price * item.qtty %></td>
+                    <td class="text-center"><%= link_to line_item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%> <i class='fas fa-trash' style='color: #fd7272;'></i> <% end %></td>
+                  </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-evenly row mb-5">
+            <%= link_to "Pagar", new_cart_order_path(params[:id]), class:"btn btn-success col-3" %>
+            <%= link_to "Volver al inicio", services_path, class:"btn btn-primary col-3" %>
+            <%= link_to "Eliminar Carrito", cart_path(params[:id]), class:"btn btn-secondary col-3", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="poster w-100">
+            <%= image_tag url_for("https://cdn.uc.assets.prezly.com/edcc6efb-1791-41ae-98c0-b0b8a56ad653/-/quality/best/-/format/auto/"), id:"img_cart", width:"100%" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
