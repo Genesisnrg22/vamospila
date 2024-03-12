@@ -14,18 +14,12 @@
     <%= render "shared/navbar" %>
     <% if controller_name == 'pages' && action_name == 'home' %>
       <div class="bg-holder" style="background-image:url(<%= asset_path 'hero-bg.svg' %>);"></div>
-      <div class="container">
-        <%= yield %>
-      </div>
+      <%= yield %>
     <% else %>
-      <div class="container mt-5">
-        <%= yield %>
-      </div>
+      <%= yield %>
     <% end %>
-    <%= yield %>
     <%= render "shared/flashes" %>
     <%= render "shared/footer"%>
+    <%= console %>
   </body>
-
-
 </html>
