@@ -110,6 +110,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_192213) do
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "services"
   add_foreign_key "orders", "users"
-  add_foreign_key "reviews", "purchases"
   add_foreign_key "services", "users"
 end

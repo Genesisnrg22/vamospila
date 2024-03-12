@@ -1,9 +1,7 @@
-<h1>Tu pedido del carrito <%= @cart.id %></h1>
-
 <div class="container">
-
-  <div class="row justify-content-between">
-    <div class="col-5">
+  <div class="row justify-content-between mt-5">
+    <div class="tabla col-5 w-50 p-3 align-items-center">
+      <div class="text-center"><h2>Tu pedido</h2></div>
       <table class="table">
         <thead>
           <tr>
@@ -14,20 +12,26 @@
           </tr>
         </thead>
         <tbody>
+        <% @order.total_price = 0 %>
         <% @line_item.each do |item| %>
-            <tr>
-              <th scope="row"><%= item.service.title %></th>
-              <td><%= item.qtty %></td>
-              <td><%= item.price %></td>
-              <td><%= item.price * item.qtty %></td>
-            </tr>
+          <tr>
+            <th scope="row"><%= item.service.title %></th>
+            <td><%= item.qtty %></td>
+            <td><%= item.price %></td>
+            <td><%= item.price * item.qtty %></td>
+          </tr>
+          <% @order.total_price += item.price * item.qtty %>
         <% end %>
         </tbody>
       </table>
+      <div class="text-end">
+        <h3>Total: <%= @order.total_price %></h3>
+      </div>
     </div>
-    <div class="col-5">
-      Tarjeta de pago
+    <div class="col-6">
+      <%= render "checkout" %>
     </div>
   </div>
 </div>
-<%= console %>
+
+ <!-- END: .modal -->
