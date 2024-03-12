@@ -11,7 +11,7 @@
               <li class="nav-item px-3 px-xl-4"><%= link_to "Servicios", services_path, class:"nav-link fw-medium" %></li>
               <% if user_signed_in? %>
                 <li class="nav-item active">
-                  <%= link_to @cart, class: "nav-link fw-medium px-5" do %>
+                  <%= link_to cart_path(session[:cart_id]), class: "nav-link fw-medium px-5" do %>
                     <i class="fas fa-shopping-cart"></i>
                   <% end %>
                 </li>
