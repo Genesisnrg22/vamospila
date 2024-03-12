@@ -16,7 +16,8 @@ class ServicesController < ApplicationController
     @markers = [
       {
         lat: @service.latitude,
-        lng: @service.longitude
+        lng: @service.longitude,
+        marker_html: render_to_string(partial: "marker")
       }
     ]
   end
