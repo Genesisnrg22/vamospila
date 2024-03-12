@@ -12,6 +12,7 @@ require "open-uri"
 Order.destroy_all
 LineItem.destroy_all
 Service.destroy_all
+Cart.destroy_all
 User.destroy_all
 
 puts "######################## Creando Usuarios ########################"
@@ -88,10 +89,10 @@ service1 = Service.new(service_type: "Fullday",
                        date: "2024/10/23",
                        user_id: user2.id)
 photo_urls = [
-  "https://i.pinimg.com/originals/93/8e/ca/938eca5d9fb12e6a05ac84a0d797055b.jpg",
-  "https://www.info4camper.com/fotos/visitar/ve/large/photos-12115-19475-cayo_sombrero.jpg",
-  "https://3.bp.blogspot.com/-OG5jKTC9_3s/VvMPN1zNRrI/AAAAAAAACIY/CI7a1Gk_rLc2-YY-hH_k1_IJf-TpQEH4w/s1600/Cayo%2Bsombrero%2B2.png",
-  "https://www.venelogia.com/uploads/2012/567_1121697134.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194013/development/3z1mvoc0ugnpu7ru8e7lcvqhcyvq.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194014/development/oy4m4plifqf66lls1p1uon9h3vp0.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194015/development/0bkkvvdro3be1egesdndh29rofu5.png",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194016/development/3or2rk02lv7ahpw3ekcd3b1472jb.jpg"
 ]
 photo_urls.each do |url|
   service1.photos.attach(io: URI.open(url), filename: "service1.jpg")
@@ -113,10 +114,10 @@ service2 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://secureservercdn.net/166.62.114.250/33t.d96.myftpupload.com/wp-content/uploads/2021/01/Medanos-de-Coro.jpg",
-  "https://olaolatravel.com/wp/wp-content/uploads/2018/08/M%C3%A9danos.de_.Coro_.National.Park_.640.8081.jpg",
-  "https://4.bp.blogspot.com/-pnjrNd8SCro/V0xpVhj0T7I/AAAAAAAAACY/-KcnOibLeLkF6wSQlmCthV1OwMQP-uc1gCLcB/s1600/img_3063_800x600.jpg",
-  "https://th.bing.com/th/id/R.5da0d4714a8c9752770c57a51e14d551?rik=OsVaRR%2bkuFlCRQ&pid=ImgRaw&r=0"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194022/development/axvwp7y89h7p0au8bct0pa36doz9.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194019/development/8t37r1w67sdqooz55luom41v4dr4.webp",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194020/development/fbuzivtp2xkze4fm3ov4j92fto75.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194021/development/6cqllvwqfob1iae6pduabinp4eui.jpg"
 ]
 photo_urls.each do |url|
   service2.photos.attach(io: URI.open(url), filename: "service2.jpg")
@@ -138,10 +139,10 @@ service3 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://th.bing.com/th/id/OIP.MfUTrDVMYAZ3bHIUC5FxvQHaES?rs=1&pid=ImgDetMain",
-  "https://1.bp.blogspot.com/-N97k0OBr4Ik/V-BL1N30VmI/AAAAAAAADG4/psuqHTkomm0QyYcQGrc99S8s8F7iiRunACLcB/s1600/3373948.jpg",
-  "https://th.bing.com/th/id/R.3c5af040cb02f0b3f9098d3c442581af?rik=D90t2MPxU4ZcDw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-ltWJ2XaPM9c%2fUA3R0BTmXnI%2fAAAAAAAAn1c%2fVRUkbSk8M8A%2fs1600%2fvzla.jpg&ehk=i00MKDUamHeXMs2CyrDjRRfXEg8mbQ2PWf5VZtWVuTA%3d&risl=&pid=ImgRaw&r=0",
-  "https://www.desdelaplaza.com/wp-content/uploads/2017/02/parque-nacional-mochima.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194028/development/r4vqo77p8jdenjbss5m0k2aods1b.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194025/development/xkexbg7df01mqkdtetg858h23nmk.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194026/development/h21pec3gv8tgor5t9gvwda3wfhoz.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194027/development/pa6gvgrqgmap4euf9u89x8jn4men.jpg"
 ]
 
 photo_urls.each do |url|
@@ -164,11 +165,10 @@ service4 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://th.bing.com/th/id/OIP.bujQVTBG40hkTuVOaYdrlAHaE-?rs=1&pid=ImgDetMain",
-  "https://media-cdn.tripadvisor.com/media/photo-s/04/37/60/01/parque-nacional-el-avila.jpg",
-  "https://th.bing.com/th/id/OIP.IRTV9GRxRVmnD9jKq9mS3gHaE7?rs=1&pid=ImgDetMain",
-  "https://4.bp.blogspot.com/-7P00CzjYiOU/UDsbZRQuyiI/AAAAAAAAAnU/9SzlqNFiMdg/s1600/04-DSC_0026.JPG",
-  "https://th.bing.com/th/id/OIP.2-bZBSKx7wlfDovy32CsIQHaEK?pid=ImgDet&w=474&h=266&rs=1"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194032/development/yillye1wh44a0dy51ycpq2avkgyh.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194030/development/efzs9k4s0xqz4x9nawuh9smndcs7.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194031/development/yd30epyltqbyni6ro5yfqxpj8006.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194035/development/g5qi9opjrcg71jul80ltq98ki28o.jpg"
 ]
 
 photo_urls.each do |url|
@@ -191,10 +191,10 @@ service5 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://th.bing.com/th/id/R.b907d9db530e862937a14a5c39fefb2a?rik=ZKVavG5AVe%2f5fw&pid=ImgRaw&r=0",
-  "https://1.bp.blogspot.com/-yAgfSBWfGww/TitqR8L7huI/AAAAAAAAA5c/S9XU__XzUyM/s1600/vereda+del+lago.jpg",
-  "https://th.bing.com/th/id/R.1aad6a00e775fc82b6cfe5cbf214c047?rik=owr6U13XuAZi2Q&riu=http%3a%2f%2fphotos.wikimapia.org%2fp%2f00%2f00%2f16%2f19%2f26_big.jpg&ehk=iRaQePlQX16Hhetgd%2fqEkcBbvtd2iKvHVrbuOrFjcR4%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
-  "https://th.bing.com/th/id/R.04bd6e86c46766a070ae4bd7f1fbbdf8?rik=txfcxcBNEA1nWw&riu=http%3a%2f%2felvigilanteweb.com%2fwp-content%2fuploads%2f2023%2f04%2fVereda_del_Lago_2.jpg&ehk=iyWlxSlnHUHCvn7ZS8cfgF8acs3gV2bMMGdq0KNTO0I%3d&risl=&pid=ImgRaw&r=0"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194040/development/hi1c8onbtjn394qv1jn13xr7c8x5.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194038/development/3c6i1rx3bgclupvng6zz1q7cksd6.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194039/development/oor1k6zqpt98x5izkprsvmo6dkvw.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194038/development/3c6i1rx3bgclupvng6zz1q7cksd6.jpg"
 ]
 
 photo_urls.each do |url|
@@ -217,10 +217,10 @@ service6 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://gbvm.knoios.com/mmedia/19605/brinca-este-una-nueva-opcion-para-divertirse-en-caracas-a-un-buen-precio-11311.jpg",
-  "https://th.bing.com/th/id/R.c4aaf5ff94d9bcedd43e2228741afd46?rik=JvA3nZs92ieS0A&pid=ImgRaw&r=0",
-  "https://venezuela-news.com/wp-content/uploads/2023/09/HD-2.jpg",
-  "https://th.bing.com/th/id/R.28676c376f16dbb769d147f732072266?rik=rGhU4cxxKBi2hA&pid=ImgRaw&r=0"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194062/development/ru0mgvn3iv798avjczg6wb66tq0j.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194063/development/t614ai9aj1c16kv6vwan3baeh587.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194064/development/qiwjd00chk7x65k7wrg5n29sxf78.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194065/development/m9o9c0cpg757vkczqgi1qa28afs1.jpg"
 ]
 
 photo_urls.each do |url|
@@ -231,31 +231,31 @@ service6.save!
 
 puts "#{service6.service_type} #{service6.title} Creado"
 
-# service7 = Service.new(service_type: "Fullday",
-#                        title: "Colonia Tovar",
-#                        price: 80,
-#                        rating: 0,
-#                        description: "La Colonia Tovar es una ciudad venezolana, capital del Municipio Tovar, en el Estado Aragua. Fue fundada el 8 de abril de 1843 por un grupo de inmigrantes alemanes provenientes del entonces Gran Ducado de Baden (luego incorporado a Alemania). Se caracteriza por mantener la impronta cultural de su origen, por lo que es llamada «la Alemania del Caribe» o «El Pueblo Alemán de Venezuela».",
-#                        address: "Colonia Tovar, Estado Aragua, Venezuela",
-#                        latitude: "10,374700",
-#                        longitude: "-67,323530",
-#                        date: "2024/05/05",
-#                        user_id: user1.id)
+service7 = Service.new(service_type: "Fullday",
+                       title: "Colonia Tovar",
+                       price: 80,
+                       rating: 0,
+                       description: "La Colonia Tovar es una ciudad venezolana, capital del Municipio Tovar, en el Estado Aragua. Fue fundada el 8 de abril de 1843 por un grupo de inmigrantes alemanes provenientes del entonces Gran Ducado de Baden (luego incorporado a Alemania). Se caracteriza por mantener la impronta cultural de su origen, por lo que es llamada «la Alemania del Caribe» o «El Pueblo Alemán de Venezuela».",
+                       address: "Colonia Tovar, Estado Aragua, Venezuela",
+                       latitude: "10,374700",
+                       longitude: "-67,323530",
+                       date: "2024/05/05",
+                       user_id: user1.id)
 
-# photo_urls = [
-#   #"https://i.dailymail.co.uk/i/pix/2016/02/02/14/30CF782500000578-3428233-image-a-73_1454422024809.jpg",
-#   #"https://th.bing.com/th/id/OIP.q0lcyB9yaalh1Ltu-Y9z6QHaFF?pid=ImgDet&w=474&h=325&rs=1",
-#   #"https://www.ajanelalaranja.com/wp-content/uploads/2013/05/Campos-com-crianca.jpg",
-#   #"https://th.bing.com/th/id/OIP.rGxuX8jgr4zRKBFW7EaHngHaFo?rs=1&pid=ImgDetMain"
-# ]
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948552/development/152spukzqdd3zrbjb5pgym9p6aap.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948553/development/fr4iy0d7gqhtivbafhqf3f2y83b7.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948555/development/rthniauq5lrwmcnftossrpacsu2m.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948556/development/9jna04l5bbfayxz67o4o9tg7iq62.jpg"
+]
 
-# photo_urls.each do |url|
-#   service7.photos.attach(io: URI.open(url), filename: "service7.jpg")
-# end
+photo_urls.each do |url|
+  service7.photos.attach(io: URI.open(url), filename: "service7.jpg")
+end
 
-# service7.save!
+service7.save!
 
-#puts "#{service7.service_type} #{service7.title} Creado"
+puts "#{service7.service_type} #{service7.title} Creado"
 
 service8 = Service.new(service_type: "Fullday",
                        title: "Dunas Parque Acuático",
@@ -269,10 +269,10 @@ service8 = Service.new(service_type: "Fullday",
                        user_id: user1.id)
 
 photo_urls = [
-  "https://aquarama.net/wp-content/uploads/2019/02/Dunas-2.jpg",
-  "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/489000/489112-beach-park-water-park.jpg",
-  "https://th.bing.com/th/id/R.16d5f09254ca18b5552453fb5628a6eb?rik=wKPJrUgy%2fK9Ftg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-HGGwrdPI3bs%2fUksIp1X7TxI%2fAAAAAAAAB-c%2fuYJFDLIIEEE%2fs1600%2fIMG_4436.JPG&ehk=cWQ7Bzd0zbGI0GKqkya5z2XtF0kUX1Tr3R1sDYvfog0%3d&risl=&pid=ImgRaw&r=0",
-  "https://www.venelogia.com/uploads/rebeca/Dunas-06.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194073/development/a4u7fr8934yb1nt5poel6obovv7c.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194070/development/z9y90r0xb2jerij55gujamqglham.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194071/development/7s1eutaoz2z177zzcd2de7s6zbfs.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194072/development/mpqqzzuzfgxrpdxcngxgj01glu5m.jpg"
 ]
 
 photo_urls.each do |url|
@@ -295,10 +295,10 @@ service9 = Service.new(service_type: "Fullday",
                        user_id: user1.id)
 
 photo_urls = [
-  "https://th.bing.com/th/id/OIP.w9sFD637qPVWvqSP-XV39gHaE8?rs=1&pid=ImgDetMain",
-  "https://th.bing.com/th/id/OIP.cQ3t_wS2fqGNjh4k7UPh0QHaFj?rs=1&pid=ImgDetMain",
-  "https://th.bing.com/th/id/R.7855e6a27671ff95381159629e0b1b6f?rik=ThxnnH2q%2bJOhcQ&pid=ImgRaw&r=0",
-  "https://www.venezuelatuya.com/canaima/angel/desdelabase.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948582/development/0jhg1gu0fa5jjlhzrwzjt52i0wwm.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948583/development/o1mm9hx6pplvzy4t182fv4yt5l97.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948591/development/r9ims00h8legdy3ugsvrvknp6l0q.png",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948592/development/159dwi8wf3wehdpjrfz0f4z32njp.jpg"
 ]
 
 photo_urls.each do |url|
@@ -321,10 +321,10 @@ service10 = Service.new(service_type: "Fullday",
                         user_id: user1.id)
 
 photo_urls = [
-  "https://3.bp.blogspot.com/--8TLXM7Yx4k/Wa6bjIcF0zI/AAAAAAAAEDg/_DL1tt3k-9EIjiIHi-faRBXXf2oGUJUBACLcBGAs/s1600/rMAnny1La3YGPQFJkXy7EXWMn.jpg",
-  "https://th.bing.com/th/id/R.61582eed273c936f242f78a014eedaf1?rik=OJlWeUMiqKvB7g&pid=ImgRaw&r=0",
-  "https://th.bing.com/th/id/R.5b1f010f3e4b75518c256052fd35d9f8?rik=Fwr3XJzJwlJnaA&riu=http%3a%2f%2f2.bp.blogspot.com%2f_S91coBk7Fbs%2fTA2CIzjj34I%2fAAAAAAAAABc%2fNOnSu52jzVo%2fs1600%2fP3170304.JPG&ehk=vKIl8RoDQNL97MjNXjwPrNDBSLqiLdzqDEMps32HDuI%3d&risl=&pid=ImgRaw&r=0",
-  "https://th.bing.com/th/id/OIP.plg6Aef7s2sUF6dG8sfMWAHaFU?rs=1&pid=ImgDetMain"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948600/development/t3mbh5nohu43q175fyxvgrmnj9wx.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948602/development/jqpuv3sa0kum77thlckrhi0rlt2e.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948604/development/1gagf7q2k9t2ts8aizxzqn5tuos8.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948606/development/8njnfp011ffkjyl2h21kyxoi6xe0.jpg"
 ]
 
 photo_urls.each do |url|
@@ -347,10 +347,10 @@ service11 = Service.new(service_type: "Fullday",
                         user_id: user1.id)
 
 photo_urls = [
-  "https://th.bing.com/th/id/OIP.S4LSyIMm8zx_nb9RJbblqwHaDT?rs=1&pid=ImgDetMain",
-  "https://media-cdn.tripadvisor.com/media/photo-s/0a/b9/7d/df/la-muleraexcelenteiiii.jpg",
-  "https://th.bing.com/th/id/R.700dee0be1aea6b08a1e07eab3630040?rik=OojDz0KAno1d%2bQ&riu=http%3a%2f%2f1.bp.blogspot.com%2f-h1YcpHF9t_8%2fTzNiiEnUj-I%2fAAAAAAAAAZE%2fgB4-p_-WqWE%2fs1600%2fva1.jpg&ehk=O%2bivsAJ7i%2fhfpaDAjtj7iQMlBXb6gPjAPfxRG7Gb3C0%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
-  "https://th.bing.com/th/id/R.779889156cb0388094d7f9efb8b5c344?rik=DZKJ32YPReWiGg&riu=http%3a%2f%2f3.bp.blogspot.com%2f-HuReBGa9MsI%2fTlWcAIok61I%2fAAAAAAAAAwU%2fKx4hGHVS1WA%2fs1600%2fLa%2bVenezuela%2bde%2bAntier%2b%2525283%252529.JPG&ehk=OEXu%2bX7iRxTLzLqT4XOdRpsbPOzy0sNQFcZsQOBG60I%3d&risl=&pid=ImgRaw&r=0"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948612/development/45a16062stzj3mnij6tuvzmjl7y0.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948614/development/3pda4yi3d1k2w2zaptb4hs7j2udj.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948616/development/yfr5my0cer8fbsnnz4vtq6ywlkfs.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948619/development/h5800x876yzf462jw7hhx4ge8xa6.jpg"
 ]
 
 photo_urls.each do |url|
@@ -372,10 +372,10 @@ service12 = Service.new(service_type: "Fullday",
                         user_id: user1.id)
 
 photo_urls = [
-  "https://www.ohlaliving.com/wp-content/uploads/2016/03/aquarama-benicassim-1.jpg",
-  "https://i.pinimg.com/736x/3c/b0/9e/3cb09e25f4cb7ee9537c9445bd9d06b5--hotel-parque-margarita.jpg",
-  "https://www.hellovalencia.es/wp-content/uploads/2018/08/aquarama-525x564.jpg",
-  "https://th.bing.com/th/id/OIP.eI-885Q8e2ndgx6R3xRougHaGW?w=700&h=600&rs=1&pid=ImgDetMain"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948627/development/b6v8sbf1t7a0u98g1qylivtxvu3j.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948629/development/1k5tk9a7qiocwdv739ej9gzeth3x.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948631/development/wxebbkboh5ngq4r3ibkb8vn8ttyy.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948633/development/9dpcbjlib91plq8lj6xymfn67ayu.jpg"
 ]
 
 photo_urls.each do |url|
@@ -403,11 +403,11 @@ line_item4.price = (line_item4.service.price * line_item4.qtty)
 line_item5 = LineItem.create!(cart: cart2, service: service3, qtty: 1)
 line_item5.price = (line_item5.service.price * line_item5.qtty)
 
-puts "Creados Line_Items"
+puts "Line_Items Creados"
 
-puts "######################## Creando Orden ########################"
+# puts "######################## Creando Orden ########################"
 
-#order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
+# order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
 
 # line_item1.order = order1
 # line_item1.update(cart_id: nil)
@@ -418,4 +418,4 @@ puts "######################## Creando Orden ########################"
 
 # cart1.destroy!
 
-puts "Orden Creada"
+# puts "Orden Creada"

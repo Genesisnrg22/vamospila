@@ -1,7 +1,15 @@
 class ServicesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show ]
+
   def index
     @services = Service.all
     @service1 = Service.first
+    @markers = @services.geocoded.map do |service|
+      {
+        lat: service.latitude,
+        lng: service.longitude
+      }
+    end
   end
 
   def new
