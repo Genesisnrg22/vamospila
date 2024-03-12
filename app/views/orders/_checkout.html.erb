@@ -28,8 +28,11 @@
                 </tr>
               </table>
           </div>
-          <button class='pay-btn'>Checkout</button>
-
+          <div class="text-center">
+            <%= button_to orders_path, class:"pay-btn w-50" do %>
+              <i class="fas fa-shield-alt"></i> Pagar
+            <% end %>
+          </div>
         </div>
 
       </div>
