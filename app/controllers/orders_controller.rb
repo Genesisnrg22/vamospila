@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  include CurrentCart
   before_action :set_cart, only: [:new, :show]
 
   def new
@@ -8,7 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = set_order
+    @order = Order.where(user_id: current_user.id)
   end
 
   def create
