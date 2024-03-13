@@ -1,3 +1,6 @@
-<h1>Estas en tus Ordenes <%= current_user.first_name %></h1>
-<%= @order.id %>
-<%= @order.total_price %>
+<div class="container">
+  <h1>Estas son tus órdenes <%= current_user.first_name %></h1>
+  <h4>Número de orden: <%= @order.id %></h4>
+  <h4>Total de pago: <%= @order.total_price %> </h4>
+  <h4>Método de pago: </h4>
+</div>
