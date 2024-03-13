@@ -29,9 +29,16 @@
               </table>
           </div>
           <div class="text-center">
-            <%= button_to orders_path, class:"pay-btn w-50" do %>
-              <i class="fas fa-shield-alt"></i> Pagar
+            <%= simple_form_for @order, method: :post do |f| %>
+              <%= f.input :total_price, disabled: true, label: "Total", input_html: { placeholder: @order.total_price, value: @order.total_price } %>
+              <%#= f.hidden_field :service_id, input_html: {value: params[:service_id]}, as: :numeric %>
+              <%= f.button :submit, class: "pay-btn w-50" do %>
+                <i class="fas fa-shield-alt"></i> Pagar
+              <% end %>
             <% end %>
+            <!--<%= button_to orders_path, class:"pay-btn w-50" do %>
+              <i class="fas fa-shield-alt"></i> Pagar
+            <% end %>-->
           </div>
         </div>
 
