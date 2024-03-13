@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user_id = current_user.id
     @order.date = Date.today
+
     if @order.save
       delete_cart
       redirect_to order_path(@order)

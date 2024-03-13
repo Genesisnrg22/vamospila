@@ -54,6 +54,13 @@ class LineItemsController < ApplicationController
     redirect_to @cart, status: :see_other
   end
 
+  def order_line_items(order)
+    @line_items = LineItem.where(cart_id: session[:cart_id])
+    @line_items.each do |line_item|
+      line_item.order_id = order.id
+    end
+  end
+
   private
 
   def line_item_params
