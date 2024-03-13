@@ -74,7 +74,7 @@
               <%= simple_form_for @order, method: :post do |f| %>
                 <%= f.hidden_field :total_price, label: "Total", value: @total_price %>
                 <%#= f.hidden_field :service_id, input_html: {value: params[:service_id]}, as: :numeric %>
-                <%= f.button :submit, class: "pay-btn w-50" do %>
+                <%= f.button :submit, class: "pay-btn w-50", value: "Pagar" do %>
                   <i class="fas fa-shield-alt"></i> Pagar
                 <% end %>
               <% end %>
@@ -91,4 +91,3 @@
 </div>
 
  <!-- END: .modal -->
-<%= console %>
