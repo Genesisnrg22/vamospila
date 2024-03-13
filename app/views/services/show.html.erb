@@ -6,7 +6,23 @@
 <div class="row ms-md-5" id="service_show">
   <div class="col-12 col-md-7">
     <div class="card-category mb-5 p-4">
-      <h1><%= @service.title %></h1>
+      <div class="d-flex justify-content-between col-12">
+        <h1><%= @service.title %></h1>
+          <% if current_user == @service.user%>
+            <div class="d-flex justify-content-between col-2 col-md-1">
+              <div>
+                <%= link_to edit_service_path(@service) do %>
+                  <i class="fa-solid fa-pen" style="color:red"></i>
+                <% end %>
+              </div>
+              <div>
+                <%= link_to service_path(@service), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash" style="color:red"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+      </div>
       <p class="" style="font-style: Italic; opacity: 0.5">ID: <%= @service.id %></p>
       <p>Fecha: <strong><%= @service.date %></strong></p>
       <p> Dirección: <strong><%= @service.address %></strong></p>
@@ -18,8 +34,7 @@
   <div class="col-12 mb-5 col-md-4 text-center">
     <div class="card-category p-3">
       <%= simple_form_for [@service, @line_item], method: :post do |f| %>
-        <%= f.input :qtty, required: true, label: "Cantidad de personas", collection: 1..10%>
-        <%#= f.hidden_field :service_id, input_html: {value: params[:service_id]}, as: :numeric %>
+        <%= f.input :qtty, as: :select, collection: 1..10, required: true, label: "Cantidad de personas", include_blank: "Seleccione una cantidad" %>
         <%= f.button :submit, class: 'btn btn-success', value:"Añadir al carrito"%>
       <% end %>
     </div>
