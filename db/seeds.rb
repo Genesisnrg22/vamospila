@@ -405,17 +405,12 @@ line_item5.price = (line_item5.service.price * line_item5.qtty)
 
 puts "Line_Items Creados"
 
-# puts "######################## Creando Orden ########################"
+puts "######################## Creando Orden ########################"
 
-# order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
+order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
 
-# line_item1.order = order1
-# line_item1.update(cart_id: nil)
-# line_item2.order = order1
-# line_item2.update(cart_id: nil)
-# line_item3.order = order1
-# line_item3.update(cart_id: nil)
+line_item1.order = order1
+line_item2.order = order1
+line_item3.order = order1
 
-# cart1.destroy!
-
-# puts "Orden Creada"
+puts "Orden Creada"

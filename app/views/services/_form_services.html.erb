@@ -1,0 +1,15 @@
+<div class="w-75">
+  <%= simple_form_for @service do |f| %>
+    <%= f.input :service_type, label: "Tipo de servicio a ofrecer", collection: ["Fullday", "Entradas", "Servicio"] %>
+    <%= f.input :title, label: "Título de la actividad" %>
+    <%= f.input :description, label: "Describe detalladamente el envento que se va a realizar", as: :text %>
+    <%= f.input :address, label: "Indica la dirección detallada donde se llevará a cabo la actividad"%>
+    <%= f.input :price, label: "Precio", as: :numeric%>
+    <%= f.input :date, label: "Fecha", as: :date %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <div class="d-flex justify-content-between">
+    <%= f.button :submit, class: 'btn-success', value:"Crear servicio"%>
+      <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>
