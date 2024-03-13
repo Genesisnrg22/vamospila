@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
   delete "line_items/:item_id", to: "line_items#destroy", as: :line_item
+  delete "carts/:cart_id", to: "carts#destroy", as: :cart
 
   resources :services do
     resources :line_items, only: [:new, :create]
@@ -26,7 +27,6 @@ Rails.application.routes.draw do
   post "line_items/minus", to: "line_items#minus"
   post "line_items/add", to: "line_items#add"
   get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
-  #post "line_items", to: "line_items#create"
-
-  # post "line_items", to: "line_items#create"
+  resources :orders, only: [:create]
+  get 'orders', to: 'orders#show', as: 'user_orders'
 end

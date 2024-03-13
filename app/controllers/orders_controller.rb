@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:new]
+  before_action :set_cart, only: [:new, :show]
 
   def new
     @line_item = LineItem.where(cart: @cart.id)
@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = set_order
+    @order = Order.where(user_id: current_user.id)
   end
 
   def create
@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   private
 
   def order_params

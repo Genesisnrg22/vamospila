@@ -1,2 +1,178 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 col-lg-6 order-0 order-md-1 text-end">
+                  <%= image_tag "hero-img.png", class:"pt-7 pt-md-0 hero-img"%>
+            </div>
+            <div class="col-md-7 col-lg-6 text-md-start py-6">
+              <h4 class="fw-bold text-danger mb-3">Busca tu próximo destino</h4>
+              <h1> Y encuentre el mejor paquete que se adapte a ti </h1>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- TESTIMONIAL OPEN ============================-->
+      <!-- ============================================-->
+
+     <div class="d-flex align-items-center py-5 mh-100 position-relative">
+        <a class="carousel-control-prev text-decoration-none " href="#mycarousel" role="button" data-bs-slide="prev">
+          <div class="position-absolute d-flex flex-column justify-content-center me-2 ms-auto left top-0">Prev<span class="fas fa-arrow-left"></span> </div> <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-decoration-none" href="#mycarousel" role="button" data-bs-slide="next">
+          <div class="d-flex flex-column justify-content-center right ms-2 me-auto position-absolute right-0 top-0"> Next <span class="fas fa-arrow-right"></span> </div> <span class="sr-only">Next</span>
+        </a>
+        <div class="container">
+            <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#mycarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#mycarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#mycarousel" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-5">
+                              <div class="d-flex justify-content-center mb-4">
+                                <img src="https://media-cdn.tripadvisor.com/media/photo-l/1d/20/e8/0c/lulitasampedrina.jpg"
+                                  class="rounded-circle shadow-1-strong" width="150" height="150" />
+                              </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="d-flex flex-column justify-content-center my-5 px-3 img-text">
+                                    <p class="review">"La plataforma es llevadera y siempre consigo precios buenos. Mi experiencia en otra ocasiones que he alquilado con ustedes es muy buena y nunca he tenido problemas. Gracias 🙂"</p>
+                                        <ul class="list-unstyled d-flex justify-content-right mb-0">
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                        </ul>
+                                    <div class="person">
+                                        <p class="m-0">Celia Cruz</p>
+                                    </div>
+                                    <p class="designation">Analista Contable</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-5">
+                              <div class="d-flex justify-content-center mb-4">
+                                <img src="https://media-cdn.tripadvisor.com/media/photo-l/06/84/93/b5/edgardo-z.jpg"
+                                  class="rounded-circle shadow-1-strong" width="150" height="150" />
+                              </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class=" d-flex flex-column justify-content-center my-5 px-3 img-text">
+                                    <p class="review">"Tuve q modificar mi reservación porque la línea aerea me canceló un vuelo.Sareth Flores se encargó de hacerme el cambio rápido mientras hablábamos por teléfono y hasta me sobró dinero con la nueva reservación. Excelente"</p>
+                                          <ul class="list-unstyled d-flex justify-content-right mb-0">
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                          </ul>
+                                    <div class="person">
+                                        <p class="m-0">Pedro Gomez</p>
+                                    </div>
+                                    <p class="designation">Gerente</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-5 ">
+                              <div class="d-flex justify-content-center mb-4">
+                                <img src="https://media-cdn.tripadvisor.com/media/photo-l/1a/f6/eb/43/default-avatar-2020-11.jpg"
+                                  class="rounded-circle shadow-1-strong" width="150" height="150" />
+                              </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class=" d-flex flex-column justify-content-center my-5 px-3 img-text">
+                                    <p class="review">"Fue super profesional y amable. Recibi un excelente servicio y pude completar mi solicitud gracias a su ayuda."</p>
+                                      <ul class="list-unstyled d-flex justify-content-right mb-0">
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                            <li>
+                                              <i class="fas fa-star fa-sm text-warning"></i>
+                                            </li>
+                                      </ul>
+                                    <div class="person">
+                                        <p class="m-0">Carlos Zambrano</p>
+                                    </div>
+                                    <p class="designation">Desarollador</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- PARTNERS OPEN ============================-->
+      <!-- ============================================-->
+
+      <div class="position-relative pt-9 pt-lg-8 pb-6 pb-lg-8">
+        <div class="container">
+          <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 flex-center">
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"><%= image_tag("1.png")%> </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"><%= image_tag("2.png")%></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"><%= image_tag("3.png")%></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"><%= image_tag("4.png")%></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                <div class="card-body text-center"><%= image_tag("5.png")%></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

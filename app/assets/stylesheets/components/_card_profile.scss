@@ -1,0 +1,43 @@
+#container {
+  margin: 0;
+  padding: 0;
+  height: calc(100vh - 66px);
+  width: 100%;
+  background: url("https://img2.wallspic.com/crops/3/2/3/7/7/177323/177323-tv_extrema_24_pulgadas-television-pulgada-agua-naturaleza-3840x2160.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#person{
+width: 150px;
+border-radius: 50%;
+border:5px solid white;
+cursor: pointer;
+}
+
+#profilecontainer{
+width: 350px;
+height: 450px;
+background-color: white;
+border-radius: 8px;
+/* position: relative; */
+/* top: 100px;
+left: 38%; */
+box-shadow: 0 0 25px black;
+}
+#profilecontainer p{
+font-family: 'Rubik', sans-serif;
+font-size: 18px;
+color: white;
+}
+
+#profilecontainer a {
+color: white;
+}
+
+#part1{
+width: 350px;
+height: 300px;
+background: linear-gradient(to right bottom, rgb(128, 110, 167), rgb(113, 52, 170));
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+}
