@@ -2,8 +2,12 @@ class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show ]
 
   def index
-    @services = Service.all
     @service1 = Service.first
+    if params[:title]
+      @services = Service.where(title: params[:title])
+    else
+      @services = Service.all
+    end
   end
 
   def new

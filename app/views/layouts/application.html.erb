@@ -14,7 +14,7 @@
   <body>
     <%= render "shared/navbar" %>
     <% if controller_name == 'pages' && action_name == 'home' %>
-      <div class="bg-holder" style="background-image:url(<%= asset_path 'hero-bg.svg' %>);"></div>
+      <div class="bg-holder" style="background-image:url(<%= asset_path 'hero-bg.svg' %>); background-size: 1500px"></div>
       <%= yield %>
     <% else %>
       <%= yield %>
