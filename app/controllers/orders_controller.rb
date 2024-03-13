@@ -8,14 +8,20 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.where(user_id: current_user.id)
+    @order = set_order
+  end
+
+  def user_orders
+    @orders = Order.where(user_id: current_user.id)
   end
 
   def create
     @order = Order.new(order_params)
     @order.user_id = current_user.id
+    @order.date = Date.today
     if @order.save
-      redirect_to @order
+      delete_cart
+      redirect_to order_path(@order)
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +30,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:date, :total_price, :payment_method, :user_id)
+    params.require(:order).permit(:total_price)
   end
 
   def set_order
