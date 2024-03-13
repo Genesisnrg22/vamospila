@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   post "line_items/minus", to: "line_items#minus"
   post "line_items/add", to: "line_items#add"
   get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
-  resources :orders, only: [:create]
-  get 'orders', to: 'orders#show', as: 'user_orders'
+  resources :orders, only: [:create, :show]
+  get "orders", to: "orders#user_orders", as: "user_orders"
 end
