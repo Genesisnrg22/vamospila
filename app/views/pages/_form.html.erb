@@ -5,7 +5,9 @@
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Destino</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Busca tu proximo destino" data-search-target="input" >
+        <input type="text" class="form-control" id="inputAddress" placeholder="Busca tu proximo destino" data-search-target="input" data-action="keyup->search#search">
+        <div data-search-target="suggestions" class="border rounded p-2 mt-1">
+        </div>
       </div>
       <div class="col-md-12">
         <button type="submit" class="btn btn-primary w-100">Buscar</button>
