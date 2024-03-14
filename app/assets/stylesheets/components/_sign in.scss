@@ -1,10 +1,13 @@
-<section class:"text-center text-lg-start">
-    .cascading-right {
-      margin-right: -50px;
-    }
+.image-container {
+  position: relative;
+  height: 100vh; /* Ajusta la altura deseada */
+  overflow: hidden;
+}
 
-    @media (max-width: 991.98px) {
-      .cascading-right {
-        margin-right: 0;
-      }
-    }
+.image-container img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  object-fit: cover;
+}
