@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   delete "line_items/:item_id", to: "line_items#destroy", as: :line_item
   delete "carts/:cart_id", to: "carts#destroy", as: :cart
+  get "/services/search", to: "services#search"
 
   resources :services do
     resources :line_items, only: [:new, :create]
@@ -29,4 +30,5 @@ Rails.application.routes.draw do
   get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
   resources :orders, only: [:create, :show]
   get "orders", to: "orders#user_orders", as: "user_orders"
+
 end
