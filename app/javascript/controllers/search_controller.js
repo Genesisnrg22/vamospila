@@ -30,7 +30,7 @@ export default class extends Controller {
           suggestionElement.textContent = suggestion;
           suggestionElement.addEventListener("click", () => {
             this.inputTarget.value = suggestion;
-            this.suggestionsTarget.innerHTML = ""; // Limpiar las sugerencias
+            this.suggestionsTarget.innerHTML = "";
             this.suggestionsTarget.classList.add('d-none');
           });
           this.suggestionsTarget.appendChild(suggestionElement);
