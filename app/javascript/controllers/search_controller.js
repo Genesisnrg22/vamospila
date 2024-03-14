@@ -24,9 +24,15 @@ export default class extends Controller {
       .then(response => response.json())
       .then(data => {
         this.suggestionsTarget.innerHTML = "";
+        this.suggestionsTarget.classList.remove('d-none');
         data.forEach(suggestion => {
           const suggestionElement = document.createElement("div");
           suggestionElement.textContent = suggestion;
+          suggestionElement.addEventListener("click", () => {
+            this.inputTarget.value = suggestion;
+            this.suggestionsTarget.innerHTML = ""; // Limpiar las sugerencias
+            this.suggestionsTarget.classList.add('d-none');
+          });
           this.suggestionsTarget.appendChild(suggestionElement);
         });
       })
