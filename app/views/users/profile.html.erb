@@ -1,7 +1,7 @@
   <div id="container" class="d-flex justify-content-center align-item-center">
     <div id="profilecontainer" class="text-center mt-5" >
         <div id="part1">
-            <%= cl_image_tag @user.photo.key, class:"img-fluid my-4", id:"person"  %>
+            <%= cl_image_tag @user.photo.key, class:"img-fluid my-4 h-50", id:"person"  %>
             <div class="mb-3 d-flex justify-content-center" >
                 <div class="card-category w-50">
                   <h1 ><%= @user.first_name %> <%= @user.last_name %></h1>
