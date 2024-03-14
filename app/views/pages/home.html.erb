@@ -18,14 +18,17 @@
       <!-- ============================================-->
 
         <div class="container mt-10 mb-5">
-          <div class="row mb-3 featurette" bis_skin_checked="1">
-            <div class="col-md-7 order-md-5" bis_skin_checked="1">
-              <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-              <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
-            </div>
-
-            <div class="col-md-5 order-md-1" bis_skin_checked="1">
-              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <%= image_tag "1.png", class:"d-block w-100"%>
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
             </div>
           </div>
         </div>
@@ -170,7 +173,7 @@
           <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 flex-center">
             <div class="col">
               <div class="card shadow-hover mb-4" style="border-radius:10px;">
-                <div class="card-body text-center"><%= image_tag("1.png")%> </div>
+                <div class="card-body text-center"><%= image_tag("1.png")%></div>
               </div>
             </div>
             <div class="col">
