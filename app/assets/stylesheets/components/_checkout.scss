@@ -187,8 +187,9 @@
     margin-right:auto;
   }
   .credit-info {
-    background:#3d4a58;
+    background: linear-gradient(132deg, rgb(2, 106, 122) 0.00%, rgb(242, 78, 163) 100.00%);
     height:100%;
+    width: 90%;
     color:#eee;
     -webkit-box-pack:center;
     -webkit-justify-content:center;
@@ -203,6 +204,7 @@
     box-sizing:border-box;
     padding-left:25px;
     padding-right:25px;
+    margin-left:48px;
     border-top-right-radius:30px;
     border-bottom-right-radius:30px;
     position:relative;
