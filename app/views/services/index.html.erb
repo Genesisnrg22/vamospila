@@ -10,16 +10,13 @@
         <button type="submit" class="btn btn-primary w-100">Buscar</button>
       </div>
     </form>
-</div>
 
-<div class="container">
   <div id="index">
     <div class="my-4 text-center">
       <h1>Encuentra tu actividad ideal</h1>
     </div>
     <div class="cards" >
       <% @services.each do |service| %>
-        <div class="box">
           <div class="card">
             <%= cl_image_tag service.photos.first.key, class:"card-img-top", height: 200, width: 400, crop: :fill %>
             <div class="card-body">
@@ -32,7 +29,6 @@
               <!--<p class="m-0">Rating: <strong><%= service.rating %></strong> <i class="fas fa-star" style="color: #FFD43B;"></i></p>-->
             </div>
           </div>
-        </div>
       <% end %>
     </div>
   </div>
