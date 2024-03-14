@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show ]
+  skip_before_action :authenticate_user!, only: %i[index show search]
 
   def index
     @service1 = Service.first
@@ -59,6 +59,13 @@ class ServicesController < ApplicationController
     @service.destroy
 
     redirect_to @service, status: :see_other
+  end
+
+  def search
+    term = params[:title]
+    # Realiza una búsqueda en tu modelo Wine para obtener sugerencias basadas en el término de búsqueda
+    suggestions = Service.where('title LIKE ?', "%#{term}%").pluck(:title).uniq
+    render json: suggestions
   end
 
   private
