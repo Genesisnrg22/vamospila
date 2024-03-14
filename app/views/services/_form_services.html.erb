@@ -8,7 +8,7 @@
     <%= f.input :date, label: "Fecha", as: :date %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <div class="d-flex justify-content-between">
-    <%= f.button :submit, class: 'btn-success', value:"Crear servicio"%>
+    <%= f.button :submit, class: 'btn-success'%>
       <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-secondary" %>
     </div>
   <% end %>

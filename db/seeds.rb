@@ -385,32 +385,3 @@ end
 service12.save!
 
 puts "#{service12.service_type} #{service12.title} Creado"
-
-puts "######################## Creando Line_Items ########################"
-
-line_item1 = LineItem.create!(cart: cart1, service: service1, qtty: 1)
-line_item1.price = (line_item1.service.price * line_item1.qtty)
-
-line_item2 = LineItem.create!(cart: cart1, service: service7, qtty: 2)
-line_item2.price = (line_item2.service.price * line_item2.qtty)
-
-line_item3 = LineItem.create!(cart: cart1, service: service4, qtty: 1)
-line_item3.price = (line_item3.service.price * line_item3.qtty)
-
-line_item4 = LineItem.create!(cart: cart2, service: service2, qtty: 1)
-line_item4.price = (line_item4.service.price * line_item4.qtty)
-
-line_item5 = LineItem.create!(cart: cart2, service: service3, qtty: 1)
-line_item5.price = (line_item5.service.price * line_item5.qtty)
-
-puts "Line_Items Creados"
-
-puts "######################## Creando Orden ########################"
-
-order1 = Order.create!(date: Date.today, total_price: line_item1.price + line_item2.price + line_item3.price, user: user3, payment_method: "TDC")
-
-line_item1.order = order1
-line_item2.order = order1
-line_item3.order = order1
-
-puts "Orden Creada"
