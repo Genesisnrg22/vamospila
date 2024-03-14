@@ -1,28 +1,34 @@
-<h1>Mis Ordenes</h1>
-
-<div class="d-flex">
-  <table class="table w-50">
-    <thead>
-      <tr>
-        <th scope="col">Orden ID</th>
-        <th scope="col" class="text-center">Total</th>
-        <th scope="col" class="text-center">Adquirido</th>
-        <th scope="col" class="text-center">Método de pago</th>
-        <th scope="col" class="text-center">Ver más</th>
-      </tr>
-    </thead>
-    <tbody >
-      <% @orders.each do |order| %>
+<div class="container">
+  <div class="d-flex justify-content-between mt-5">
+    <div class="col-12 col-md-6">
+      <h1>Mis Ordenes</h1>
+      <table class="table mt-5">
+        <thead>
           <tr>
-            <th scope="row text-center"><%= order.id %></th>
-            <td class="text-center"><%= order.total_price %></td>
-            <td class="text-center"><%= order.date %></td>
-            <td class="text-center"><%= order.payment_method %></td>
-            <td class="text-center"><%= link_to order_path(order) do %> <i class="fas fa-book-reader"></i> <% end %></td>
+            <th scope="col">Orden ID</th>
+            <th scope="col" class="text-center">Total</th>
+            <th scope="col" class="text-center">Adquirido</th>
+            <th scope="col" class="text-center">Método de pago</th>
+            <th scope="col" class="text-center">Ver más</th>
           </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div>
+        </thead>
+        <tbody >
+          <% @orders.each do |order| %>
+              <tr>
+                <th scope="row text-center"><%= order.id %></th>
+                <td class="text-center"><%= order.total_price %></td>
+                <td class="text-center"><%= order.date %></td>
+                <td class="text-center"><%= order.payment_method %></td>
+                <td class="text-center"><%= link_to order_path(order) do %> <i class="fas fa-book-reader"></i> <% end %></td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-md-5" id="poster">
+      <div class="poster w-100">
+        <%= image_tag "https://th.bing.com/th/id/R.1ade8e114127096b426e1c88a7f83c61?rik=x7UFmAxnUzlF1A&pid=ImgRaw&r=0", width:"90%" %>
+      </div>
+    </div>
   </div>
 </div>

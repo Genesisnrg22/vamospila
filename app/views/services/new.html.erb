@@ -1,4 +1,13 @@
-<div class="d-flex flex-column align-items-center justify-content-center w-50 mx-auto">
-  <h1 class="title my-3">Ofrece un Servicio</h1>
-  <%= render "form_services" %>
+<div class="container">
+  <div class="d-flex justify-content-between mt-3">
+    <div class="col-12 col-md-6 justify-content-center">
+      <h1 class="title mb-3">Ofrece un Servicio</h1>
+      <%= render "form_services" %>
+    </div>
+    <div class="col-12 col-md-5 mt-5" id="poster">
+      <div class="poster w-100">
+        <%= image_tag "https://i.pinimg.com/474x/18/91/98/189198f1527fef03d3dc317631a046f9.jpg", width:"100%" %>
+      </div>
+    </div>
+  </div>
 </div>

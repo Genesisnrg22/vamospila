@@ -1,4 +1,4 @@
-<div class="w-75">
+<div class="w-100">
   <%= simple_form_for @service do |f| %>
     <%= f.input :service_type, label: "Tipo de servicio a ofrecer", collection: ["Fullday", "Entradas", "Servicio"] %>
     <%= f.input :title, label: "Título de la actividad" %>
@@ -8,7 +8,7 @@
     <%= f.input :date, label: "Fecha", as: :date %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <div class="d-flex justify-content-between">
-    <%= f.button :submit, class: 'btn-success'%>
+    <%= f.button :submit, class: 'btn-success', value:"Guardar"%>
       <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-secondary" %>
     </div>
   <% end %>

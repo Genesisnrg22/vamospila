@@ -7,7 +7,7 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <p>¿No tienes cuenta? <%= link_to "Sign up", new_registration_path(resource_name) , class:"link-info" %></p>
+  <p>¿No tienes cuenta? <%= link_to "Sign up", new_registration_path(resource_name) , class:" ", style:"color:#ab7500" %></p>
 <% end %>
 
 

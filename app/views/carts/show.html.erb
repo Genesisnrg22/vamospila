@@ -1,13 +1,11 @@
   <div class="container" id="show_cart">
-    <div class="row">
-      <div class="col-md-12 my-4">
-        <h1>Carrito de Compras</h1>
-      </div>
+    <div class="row mt-3">
       <% if @line_items.nil? || @line_items.empty? || params[:id].to_i != @cart.id %>
-        <p>Tu carrito está vacío</p>
+        <h1 class="mb-5">Tu carrito está vacío</h1>
         <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-primary" %>
       <% else %>
-        <div class="col-md-8">
+       <div class="col-md-8">
+          <h1>Carrito de Compras</h1>
           <table class="table col-8">
             <thead>
               <tr>
@@ -38,7 +36,7 @@
         </div>
         <div class="col-12 col-md-4">
           <div class="poster w-100">
-            <%= image_tag url_for("https://cdn.uc.assets.prezly.com/edcc6efb-1791-41ae-98c0-b0b8a56ad653/-/quality/best/-/format/auto/"), id:"img_cart", width:"100%" %>
+            <%= image_tag "https://i.pinimg.com/originals/d7/98/f7/d798f7fb58a28d31d835796cc633d10a.jpg", width:"100%" %>
           </div>
         </div>
       <% end %>

@@ -7,15 +7,14 @@
                   <h1 ><%= @user.first_name %> <%= @user.last_name %></h1>
                 </div>
             </div>
-
-            <div>
-              <a href="#"><i class="fab fa-facebook fa-lg "></i></a>
-              <a href="#"><i class="fab fa-twitter fa-lg "></i></a>
-              <a href="#"><i class="fab fa-instagram fa-lg "></i></a>
-            </div>
         </div>
         <div id="part2">
-          <div class="d-flex flex-column justify-content-center my-5">
+          <div class="d-flex flex-column justify-content-center my-3">
+                        <div class="mb-2">
+                          <a href="#"><i class="fab fa-facebook fa-lg text-secondary"></i></a>
+                          <a href="#"><i class="fab fa-twitter fa-lg mx-3 text-secondary"></i></a>
+                          <a href="#"><i class="fab fa-instagram fa-lg text-secondary"></i></a>
+                        </div>
                         <div class="mr-3 mb-2">
                           <i class="fas fa-phone"></i>
                           <span><%= @user.phone %></span>
