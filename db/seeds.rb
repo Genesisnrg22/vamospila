@@ -89,10 +89,7 @@ service1 = Service.new(service_type: "Fullday",
                        date: "2024/10/23",
                        user_id: user2.id)
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194013/development/3z1mvoc0ugnpu7ru8e7lcvqhcyvq.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194014/development/oy4m4plifqf66lls1p1uon9h3vp0.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194015/development/0bkkvvdro3be1egesdndh29rofu5.png",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194016/development/3or2rk02lv7ahpw3ekcd3b1472jb.jpg"
+  ""
 ]
 photo_urls.each do |url|
   service1.photos.attach(io: URI.open(url), filename: "service1.jpg")

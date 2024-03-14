@@ -17,16 +17,18 @@
     </div>
     <div class="cards">
       <% @services.each do |service| %>
-        <div class="card" id="box">
-          <%= cl_image_tag service.photos.first.key, class:"card-img-top", height: 200, width: 400, crop: :fill %>
-          <div class="card-body">
-            <h3><strong><%= service.title %></strong></h3>
-            <p>Dueño: <%= service.user.first_name %></p>
-            <p>Fecha: <%= service.date %></p>
-          </div>
-          <div class="card-body d-flex align-items-end justify-content-between">
-            <%= link_to "Ver más", service_path(service), class:"btn btn-success" %>
-            <!--<p class="m-0">Rating: <strong><%= service.rating %></strong> <i class="fas fa-star" style="color: #FFD43B;"></i></p>-->
+        <div class="box">
+          <div class="card">
+            <%= cl_image_tag service.photos.first.key, class:"card-img-top", height: 200, width: 400, crop: :fill %>
+            <div class="card-body">
+              <h3><strong><%= service.title %></strong></h3>
+              <p>Dueño: <%= service.user.first_name %></p>
+              <p>Fecha: <%= service.date %></p>
+            </div>
+            <div class="card-body d-flex align-items-end justify-content-between">
+              <%= link_to "Ver más", service_path(service), class:"btn btn-success" %>
+              <!--<p class="m-0">Rating: <strong><%= service.rating %></strong> <i class="fas fa-star" style="color: #FFD43B;"></i></p>-->
+            </div>
           </div>
         </div>
       <% end %>
