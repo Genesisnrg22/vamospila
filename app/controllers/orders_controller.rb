@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id
     @order.date = Date.today
     @line_items = LineItem.where(cart_id: session[:cart_id])
+    @order.payment_method = "Tarjeta de crédito"
     if @order.save
       @line_items.each do |line_item|
         line_item.order_id = @order.id
