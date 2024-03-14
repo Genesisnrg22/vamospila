@@ -31,32 +31,15 @@
         <h3>Total: <%= @total_price %></h3>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6" data-controller="card">
       <div id="checkout">
         <div class='credit-info'>
           <div class='credit-info-content'>
             <div>
-              <table class='half-input-table'>
-                <tr>
-                  <td>Please select your card: </td>
-                  <td>
-                    <div class='dropdown' id='card-dropdown'>
-                    <div class='dropdown-btn' id='current-card'>
-                      Visa
-                    </div>
-                    <div class='dropdown-select'>
-                      <ul>
-                        <li>Master Card</li>
-                        <li>American Express</li>
-                      </ul>
-                    </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              <%= image_tag 'https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png', height: 50, class: 'credit-card-image', id: 'credit-card-image' %>
+              <%= image_tag 'visa.png', height: 50, class: 'credit-card-image d-none', id: 'credit-card-image', data: {card_target: "visa"}%>
+              <%= image_tag 'mastercard2.png', height: 50, class: 'credit-card-image d-none', id: 'credit-card-image', data: {card_target: "mastercard"} %>
               <strong>Card Number</strong>
-              <input class='input-field'></input>
+              <input class='input-field' data-card-target="input" data-action="keyup->card#verification"></input>
               <strong>Card Holder</strong>
               <input class='input-field'></input>
               <table class='half-input-table'>
@@ -89,5 +72,3 @@
     </div>
   </div>
 </div>
-
- <!-- END: .modal -->
