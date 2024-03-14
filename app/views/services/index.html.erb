@@ -1,21 +1,23 @@
 <div class="container">
-  <div class="d-flex align-items-center justify-content-center flex-column gap-4 mt-7 mb-7">
-      <form class="d-flex col-md-10">
-          <input class="form-control me-3" type="search" placeholder="Busca tu servicio" aria-label="Search">
-          <button class="btn btn-primary" type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-      </form>
-  </div>
+    <form class="row g-4" data-controller="search" data-action="submit->search#filter">
+      <div class="col-12">
+        <label for="inputAddress" class="form-label"></label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Busca tu proximo destino" data-search-target="input" data-action="keyup->search#search">
+        <div data-search-target="suggestions" class="d-none border rounded p-3 mt-2">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary w-100">Buscar</button>
+      </div>
+    </form>
 </div>
-
 
 <div class="container">
   <div id="index">
     <div class="my-4 text-center">
       <h1>Encuentra tu actividad ideal</h1>
     </div>
-    <div class="cards">
+    <div class="cards" >
       <% @services.each do |service| %>
         <div class="card">
           <%= cl_image_tag service.photos.first.key, class:"card-img-top", height: 200, width: 400, crop: :fill %>
