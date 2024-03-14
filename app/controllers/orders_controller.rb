@@ -19,8 +19,12 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user_id = current_user.id
     @order.date = Date.today
-    order_line_items(@order)
+    @line_items = LineItem.where(cart_id: session[:cart_id])
     if @order.save
+      @line_items.each do |line_item|
+        line_item.order_id = @order.id
+        line_item.save
+      end
       delete_cart
       redirect_to order_path(@order)
     else
