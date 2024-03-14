@@ -6,7 +6,10 @@
     <%= f.input :address, label: "Indica la dirección detallada donde se llevará a cabo la actividad"%>
     <%= f.input :price, label: "Precio", as: :numeric%>
     <%= f.input :date, label: "Fecha", as: :date %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, direct_upload: true %>
+    <% @service.photos.each do |photo| %>
+      <%= f.hidden_field :photos, multiple: true, value: photo.signed_id %>
+    <% end %>
     <div class="d-flex justify-content-between">
     <%= f.button :submit, class: 'btn-success', value:"Guardar"%>
       <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-secondary" %>
