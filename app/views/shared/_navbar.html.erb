@@ -13,6 +13,7 @@
                 <li class="nav-item active">
                   <%= link_to cart_path(session[:cart_id]), class: "nav-link fw-medium px-5" do %>
                     <i class="fas fa-shopping-cart"></i>
+                      <span class="badge badge-danger"><%= line_items_cart.length %></span>
                   <% end %>
                 </li>
                 <li class="nav-item dropdown">
@@ -21,6 +22,7 @@
                     <ul class="p-0" style="list-style:none">
                       <li><%= link_to "Perfil", user_profile_path(current_user.id), class: "dropdown-item" %></li>
                       <li><%= link_to "Mis Compritas", user_orders_path, class: "dropdown-item" %></li>
+                      <li><%= link_to "Publicar un servicio", new_service_path, class: "dropdown-item" %></li>
                       <li><%= link_to "Log out",destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %></li>
                     </ul>
                   </div>
@@ -28,9 +30,6 @@
               <% else %>
                 <li class="nav-item px-3 px-xl-4"><%= link_to "Login", new_user_session_path, class:"nav-link fw-medium" %></a></li>
                 <li class="nav-item px-3 px-xl-4"><%= link_to "Sign Up", new_user_registration_path, class:"btn btn-outline-dark order-1 order-lg-0 fw-medium" %></li>
-                <%=link_to "#" do  %>
-                <i class="fa-solid fa-cart-shopping"></i>
-                <% end %>
               <% end %>
             </ul>
           </div>

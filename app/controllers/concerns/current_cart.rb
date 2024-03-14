@@ -7,4 +7,8 @@ module CurrentCart
     @cart = Cart.create
     session[:cart_id] = @cart.id
   end
+
+  def delete_cart
+    session[:cart_id] = nil
+  end
 end

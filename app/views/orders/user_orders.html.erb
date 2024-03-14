@@ -1,0 +1,28 @@
+<h1>Mis Ordenes</h1>
+
+<div class="d-flex">
+  <table class="table w-50">
+    <thead>
+      <tr>
+        <th scope="col">Orden ID</th>
+        <th scope="col" class="text-center">Total</th>
+        <th scope="col" class="text-center">Adquirido</th>
+        <th scope="col" class="text-center">Método de pago</th>
+        <th scope="col" class="text-center">Ver más</th>
+      </tr>
+    </thead>
+    <tbody >
+      <% @orders.each do |order| %>
+          <tr>
+            <th scope="row text-center"><%= order.id %></th>
+            <td class="text-center"><%= order.total_price %></td>
+            <td class="text-center"><%= order.date %></td>
+            <td class="text-center"><%= order.payment_method %></td>
+            <td class="text-center"><%= link_to order_path(order) do %> <i class="fas fa-book-reader"></i> <% end %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+  </div>
+</div>

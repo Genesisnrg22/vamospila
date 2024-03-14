@@ -1,29 +1,42 @@
-<div class="container mt-3 d-flex flex-column align-items-center p-2" id="login">
-  <div class="card p-5 w-50">
-    <div class="text-center"><h2><strong>Log in</strong></h2></div>
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="card-body">
-          <div class="form-inputs mt-3">
-            <%= f.input :email,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: false,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-6 text-black">
+      <div class="container mt-3 d-flex flex-column align-items-center p-2" id="login">
+        <div class="card p-5">
 
-          <div class="text-center">
-            <div class="form-actions mt-3">
-              <%= f.button :submit, "Log in", class:"w-50", id:"btn_login" %>
-            </div>
-            <div>
-              <%= render "devise/shared/links" %>
-            </div>
+          <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Ingresar</h3>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="card-body">
+                <div class="form-inputs mt-3", style="width: 23rem;">
+                  <%= f.input :email,
+                              required: false,
+                              autofocus: true,
+                              input_html: { autocomplete: "email", } %>
+                  <%= f.input :password,
+                              required: false,
+                              input_html: { autocomplete: "current-password" } %>
+                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                </div>
+
+                <div class="text-center">
+                  <div class="form-actions mt-3">
+                    <%= f.button :submit, "Log in", class:"btn btn-primary btn-lg w-100 ", id:"btn_login" %>
+                  </div>
+                  <div>
+                    <%= render "devise/shared/links" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
+
+
+
+    <div class="col-md-6 p-7 px-0 d-none d-md-block rounded">
+      <img src="https://wallpaperaccess.com/full/2074807.jpg"
+        alt="Login image" class="w-75 vh-75 rounded">
     </div>
   </div>
 </div>

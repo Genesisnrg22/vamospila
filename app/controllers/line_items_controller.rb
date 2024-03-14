@@ -20,8 +20,12 @@ class LineItemsController < ApplicationController
 
   def create
     @service = Service.find(params[:service_id].to_i)
-    @line_item = LineItem.create(service: @service, qtty: line_item_params[:qtty], cart: @cart, price: @service.price)
-    redirect_to @cart
+    @line_item = LineItem.new(service: @service, qtty: line_item_params[:qtty], cart: @cart, price: @service.price)
+    if @line_item.save
+      redirect_to @cart
+    else
+      render "services/show", status: :unprocessable_entity
+    end
   end
 
   def show
@@ -48,6 +52,13 @@ class LineItemsController < ApplicationController
     @line_item.destroy
 
     redirect_to @cart, status: :see_other
+  end
+
+  def order_line_items(order)
+    @line_items = LineItem.where(cart_id: session[:cart_id])
+    @line_items.each do |line_item|
+      line_item.order_id = order.id
+    end
   end
 
   private
