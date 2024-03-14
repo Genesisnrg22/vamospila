@@ -13,9 +13,14 @@
                         autofocus: true,
                         input_html: { autocomplete: "email" } %>
           </div>
-        <% end %>
 
-        <%= render "devise/shared/links" %>
+          <div class="form-actions">
+            <%= f.button :submit, "Enviar instrucciones" %>
+          </div>
+        <% end %>
+        <div class="mt-3">
+          <strong><%= render "devise/shared/links" %></strong>
+        </div>
       </div>
     </div>
   </div>
