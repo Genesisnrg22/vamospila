@@ -1,6 +1,35 @@
-<h1>Estas en tus Ordenes <%= current_user.first_name %></h1>
-<%= @order.id %>
-<%= @order.total_price %>
-<%= @order.line_items %>
-
-<%= console %>
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-12 col-md-4">
+        <div class="poster w-100">
+          <%= image_tag "https://th.bing.com/th/id/R.4ca3ad58c4276c06d0227bfc43683437?rik=uwuaaff0v%2bu3tg&pid=ImgRaw&r=0", width:"100%" %>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h1>Número de orden: <%= @order.id %></h1>
+        <table class="table col-8">
+          <thead>
+            <tr>
+              <th scope="col">Actividad</th>
+              <th scope="col" class="text-center">Personas</th>
+              <th scope="col" class="text-center">Precio</th>
+              <th scope="col" class="text-center">Total</th>
+            </tr>
+          </thead>
+          <tbody >
+            <% @order.line_items.each do |item| %>
+              <tr>
+              <th scope="row"><%= item.service.title %></th>
+              <td class="text-center"><%= item.qtty %></td>
+              <td class="text-center"><%= item.price %></td>
+              <td class="text-center"><%= item.price * item.qtty %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-evenly row mb-5">
+          <%= link_to "Volver a tus ordenes", orders_path, class:"btn btn-primary col-3" %>
+        </div>
+      </div>
+    </div>
+  </div>

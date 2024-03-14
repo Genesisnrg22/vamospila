@@ -31,40 +31,23 @@
         <h3>Total: <%= @total_price %></h3>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6" data-controller="card">
       <div id="checkout">
         <div class='credit-info'>
           <div class='credit-info-content'>
             <div>
-              <table class='half-input-table'>
-                <tr>
-                  <td>Please select your card: </td>
-                  <td>
-                    <div class='dropdown' id='card-dropdown'>
-                    <div class='dropdown-btn' id='current-card'>
-                      Visa
-                    </div>
-                    <div class='dropdown-select'>
-                      <ul>
-                        <li>Master Card</li>
-                        <li>American Express</li>
-                      </ul>
-                    </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='50' class='credit-card-image' id='credit-card-image'></img>
-              Card Number
-              <input class='input-field'></input>
-              Card Holder
+              <%= image_tag 'visa.png', height: 50, class: 'credit-card-image d-none', id: 'credit-card-image', data: {card_target: "visa"}%>
+              <%= image_tag 'mastercard3.png', height: 50, class: 'credit-card-image d-none', id: 'credit-card-image', data: {card_target: "mastercard"} %>
+              <strong>Card Number</strong>
+              <input class='input-field' data-card-target="input" data-action="keyup->card#verification"></input>
+              <strong>Card Holder</strong>
               <input class='input-field'></input>
               <table class='half-input-table'>
                 <tr>
-                  <td> Expires
+                  <td> <strong>Expires</strong>
                     <input class='input-field'></input>
                   </td>
-                  <td>CVC
+                  <td><strong>CVC</strong>
                     <input class='input-field'></input>
                   </td>
                 </tr>
@@ -74,7 +57,7 @@
               <%= simple_form_for @order, method: :post do |f| %>
                 <%= f.hidden_field :total_price, label: "Total", value: @total_price %>
                 <%#= f.hidden_field :service_id, input_html: {value: params[:service_id]}, as: :numeric %>
-                <%= f.button :submit, class: "pay-btn w-50" do %>
+                <%= f.button :submit, class: "pay-btn w-50", value: "Pagar" do %>
                   <i class="fas fa-shield-alt"></i> Pagar
                 <% end %>
               <% end %>
@@ -89,5 +72,3 @@
     </div>
   </div>
 </div>
-
- <!-- END: .modal -->
