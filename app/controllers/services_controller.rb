@@ -25,6 +25,7 @@ class ServicesController < ApplicationController
       }
     ]
     @reviews = Review.where(service_id: @service.id)
+    
   end
 
   def create
