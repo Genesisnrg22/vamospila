@@ -24,8 +24,8 @@
                     <%= button_to "-", line_items_minus_path(item_id: item.id), style: "width:28px", id:"minus"%>
                     <strong class="mx-2"><%= item.qtty %></strong>
                     <%= button_to "+", line_items_add_path(item_id: item.id), style: "width:28px", id:"plus" %></td>
-                    <td class="text-center"><%= item.price %></td>
-                    <td class="text-center"><%= item.price * item.qtty %>$</td>
+                    <td class="text-center">$<%= item.price %></td>
+                    <td class="text-center">$<%= item.price * item.qtty %></td>
                     <td class="text-center"><%= link_to line_item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%> <i class='fas fa-trash' style='color: #fd7272;'></i> <% end %></td>
                   </tr>
               <% end %>
