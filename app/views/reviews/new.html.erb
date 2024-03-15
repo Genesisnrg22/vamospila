@@ -1,0 +1,7 @@
+<h1>¡Cuenta tu experiencia!</h1>
+<%= simple_form_for [@service, @review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating, collection: [['1 Malo', '1'], ['2 <i class="fas fa-star" style="color: #FFD43B;"></i> Regular', '2'], ['3 <i class="fas fa-star" style="color: #FFD43B;"></i> Bueno', '3'], ['4 <i class="fas fa-star" style="color: #FFD43B;"></i> Muy bueno', '4'], ['5 <i class="fas fa-star" style="color: #FFD43B;"></i> Excelente', '5']], label: "Calificación:", as: :radio_buttons %>
+  <%= f.hidden_field :order_id, value: params[:order_id] %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>

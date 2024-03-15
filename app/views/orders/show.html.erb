@@ -14,6 +14,7 @@
               <th scope="col" class="text-center">Personas</th>
               <th scope="col" class="text-center">Precio</th>
               <th scope="col" class="text-center">Total</th>
+              <th scope="col" class="text-center">Reseñas</th>
             </tr>
           </thead>
           <tbody >
@@ -23,6 +24,10 @@
               <td class="text-center"><%= item.qtty %></td>
               <td class="text-center"><%= item.price %></td>
               <td class="text-center"><%= item.price * item.qtty %></td>
+              <td class="text-center"><%= link_to new_service_review_path(item.service, order_id: @order) do %>
+                <i class="fas fa-pen"></i>
+              <% end %>
+              </td>
               </tr>
             <% end %>
           </tbody>
