@@ -26,7 +26,15 @@
             </div>
             <div class="card-body d-flex align-items-end justify-content-between">
               <%= link_to "Ver más", service_path(service), class:"btn btn-success" %>
-              <!--<p class="m-0">Rating: <strong><%= service.rating %></strong> <i class="fas fa-star" style="color: #FFD43B;"></i></p>-->
+              <% review_services = 0 %>
+              <% service.reviews.each do |review| %>
+                  <% review_services += review.rating%>
+              <% end %>
+              <% if review_services == 0 || review_services.nil? %>
+                <p class="m-0">Rating: <strong><i class="far fa-star" style="color: #FFD43B;"></i></strong></p>
+              <% else %>
+                <p class="m-0">Rating: <strong><%= "#{'⭐' * (review_services / service.reviews.length).to_i }"  %></strong></p>
+              <% end %>
             </div>
           </div>
       <% end %>

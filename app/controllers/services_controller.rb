@@ -2,7 +2,7 @@ class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show search]
 
   def index
-    @service1 = Service.first
+    #@service1 = Service.first
     if params[:title]
       @services = Service.where(title: params[:title])
     else
@@ -24,6 +24,8 @@ class ServicesController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     ]
+    @reviews = Review.where(service_id: @service.id)
+    
   end
 
   def create

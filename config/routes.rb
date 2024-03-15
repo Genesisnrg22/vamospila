@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :services do
     resources :line_items, only: [:new, :create]
+    resources :reviews, only: [:index, :new, :create]
   end
+    resource :reviews, only: [:show, :edit, :update, :destroy]
 
   resources :line_items do
     resource :orders, only: [:update]
@@ -30,5 +32,6 @@ Rails.application.routes.draw do
   get '/users/:id/profile', to: 'users#profile', as: 'user_profile'
   resources :orders, only: [:create, :show]
   get "orders", to: "orders#user_orders", as: "user_orders"
+
 
 end
