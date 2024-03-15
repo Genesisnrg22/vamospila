@@ -1,29 +1,34 @@
 <div class="container">
   <div class="d-flex justify-content-between mt-5">
     <div class="col-12 col-md-6">
-      <h1>Mis Ordenes</h1>
-      <table class="table mt-5">
-        <thead>
-          <tr>
-            <th scope="col">Orden ID</th>
-            <th scope="col" class="text-center">Total</th>
-            <th scope="col" class="text-center">Adquirido</th>
-            <th scope="col" class="text-center">Método de pago</th>
-            <th scope="col" class="text-center">Ver más</th>
-          </tr>
-        </thead>
-        <tbody >
-          <% @orders.each do |order| %>
-              <tr>
-                <th scope="row text-center"><%= order.id %></th>
-                <td class="text-center"><%= order.total_price %></td>
-                <td class="text-center"><%= order.date %></td>
-                <td class="text-center"><%= order.payment_method %></td>
-                <td class="text-center"><%= link_to order_path(order) do %> <i class="fas fa-book-reader"></i> <% end %></td>
-              </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <% if @orders.nil? || @orders.empty? %>
+        <h1 class="mb-5">Aún no tienes órdenes 😥</h1>
+        <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-primary" %>
+      <% else %>
+        <h1>Mis Ordenes</h1>
+        <table class="table mt-5">
+          <thead>
+            <tr>
+              <th scope="col">Orden ID</th>
+              <th scope="col" class="text-center">Total</th>
+              <th scope="col" class="text-center">Adquirido</th>
+              <th scope="col" class="text-center">Método de pago</th>
+              <th scope="col" class="text-center">Ver más</th>
+            </tr>
+          </thead>
+          <tbody >
+            <% @orders.each do |order| %>
+                <tr>
+                  <th scope="row text-center"><%= order.id %></th>
+                  <td class="text-center"><%= order.total_price %></td>
+                  <td class="text-center"><%= order.date %></td>
+                  <td class="text-center"><%= order.payment_method %></td>
+                  <td class="text-center"><%= link_to order_path(order) do %> <i class="fas fa-book-reader"></i> <% end %></td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
     <div class="col-12 col-md-5" id="poster">
       <div class="poster w-100">
