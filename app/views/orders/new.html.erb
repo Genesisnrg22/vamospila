@@ -38,17 +38,17 @@
             <div>
               <%= image_tag 'visa.png', height: 50, class: 'credit-card-image d-none', id: 'credit-card-image', data: {card_target: "visa"}%>
               <%= image_tag 'mastercard3.png', height: 50, class: 'credit-card-image d-none', id: 'credit-card-image', data: {card_target: "mastercard"} %>
-              <strong>Card Number</strong>
-              <input class='input-field' data-card-target="input" data-action="keyup->card#verification"></input>
-              <strong>Card Holder</strong>
-              <input class='input-field'></input>
+              <strong>Número de tarjeta</strong>
+              <input class='input-field' placeholder="0000 0000 0000 0000" data-card-target="input" data-action="keyup->card#verification"></input>
+              <strong>Titular</strong>
+              <input class='input-field' placeholder="Juan C. Alvarez"></input>
               <table class='half-input-table'>
                 <tr>
-                  <td> <strong>Expires</strong>
-                    <input class='input-field'></input>
+                  <td> <strong>Fecha de vencimiento</strong>
+                    <input class='input-field' placeholder="MM/AA"></input>
                   </td>
                   <td><strong>CVC</strong>
-                    <input class='input-field'></input>
+                    <input class='input-field' placeholder="123"></input>
                   </td>
                 </tr>
               </table>
@@ -57,7 +57,7 @@
               <%= simple_form_for @order, method: :post do |f| %>
                 <%= f.hidden_field :total_price, label: "Total", value: @total_price %>
                 <%#= f.hidden_field :service_id, input_html: {value: params[:service_id]}, as: :numeric %>
-                <%= f.button :submit, class: "pay-btn w-50", value: "Pagar" do %>
+                <%= f.button :submit, class: "pay-btn w-100", value: "Pagar" do %>
                   <i class="fas fa-shield-alt"></i> Pagar
                 <% end %>
               <% end %>
