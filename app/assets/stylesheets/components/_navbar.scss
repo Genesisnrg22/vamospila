@@ -19622,6 +19622,16 @@ iframe {
   margin-left: -4rem;
 }
 
+.navbar-top-add{
+  background-color: transparent !important;
+  transition: all .4s ease;
+}
+
+.navbar-top-remove{
+  transition: all .3s ease;
+  background-color: white !important;
+  opacity: 0.95;
+}
 
 /*-----------------------------------------------
 |   User Styles
