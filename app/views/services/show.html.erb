@@ -57,7 +57,7 @@
               <% @reviews.each do |review| %>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="fst-italic mt-2"> <%= image_tag review.order.user.photo, class:"avatar m-2" %> <%= review.order.user.first_name %> <%= review.order.user.last_name %>: "<%= review.comment %>"</div>
-                  <div><strong><%= review.rating %> <i class="fas fa-star" style="color: #FFD43B;"></i></strong></div>
+                  <div><strong><% review = review.rating %> <%= "#{'⭐'*review}" %></strong></div>
                 </div>
               <% end %>
             <% end %>
