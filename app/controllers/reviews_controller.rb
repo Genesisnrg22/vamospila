@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   def new
     @service = Service.find(params[:service_id])
     @review = Review.new
+    @exist = Review.find_by(order_id: params[:order_id], service_id: @service.id)
   end
 
   def create

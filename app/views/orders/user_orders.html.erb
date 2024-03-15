@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-between mt-5">
     <div class="col-12 col-md-6">
       <% if @orders.nil? || @orders.empty? %>
-        <h1 class="mb-5">Aún no tienes órdenes 😥</h1>
+        <h1 class="mb-5">Aún no tienes órdenes</h1>
         <%= link_to "Volver a todos los servicios", services_path, class:"btn btn-primary" %>
       <% else %>
         <h1>Mis Ordenes</h1>

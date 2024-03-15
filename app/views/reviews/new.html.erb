@@ -1,7 +1,15 @@
-<h1>¡Cuenta tu experiencia!</h1>
-<%= simple_form_for [@service, @review] do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :rating, collection: [['1 Malo', '1'], ['2 <i class="fas fa-star" style="color: #FFD43B;"></i> Regular', '2'], ['3 <i class="fas fa-star" style="color: #FFD43B;"></i> Bueno', '3'], ['4 <i class="fas fa-star" style="color: #FFD43B;"></i> Muy bueno', '4'], ['5 <i class="fas fa-star" style="color: #FFD43B;"></i> Excelente', '5']], label: "Calificación:", as: :radio_buttons %>
-  <%= f.hidden_field :order_id, value: params[:order_id] %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="d-flex justify-content-center mt-5">
+  <% if Review.find_by(order_id: params[:order_id], service_id: @service.id) %>
+    <h2>¡Ya diste tu review por este orden!</h2>
+  <% else %>
+    <div class="col-12 col-md-6 justify-content-center">
+      <h1 class="mb-5">¡Cuéntanos tu experiencia!</h1>
+      <%= simple_form_for [@service, @review] do |f| %>
+        <%= f.input :comment, label:"Escríbenos tu comentario aquí:", class:"my-5" %>
+        <%= f.input :rating, collection: [['1 Malo', '1'], ['2 Regular', '2'], ['3 Bueno', '3'], ['4 Muy bueno', '4'], ['5 Excelente', '5']], label: "Calificación:", class:"my-5", as: :radio_buttons %>
+        <%= f.hidden_field :order_id, value: params[:order_id] %>
+        <%= f.submit "Enviar Reseña", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
