@@ -64,7 +64,7 @@ class ServicesController < ApplicationController
   def search
     term = params[:title]
     # Realiza una búsqueda en tu modelo Wine para obtener sugerencias basadas en el término de búsqueda
-    suggestions = Service.where('title LIKE ?', "%#{term}%").pluck(:title).uniq
+    suggestions = Service.where('title ILIKE ?', "%#{term}%").pluck(:title).uniq
     render json: suggestions
   end
 

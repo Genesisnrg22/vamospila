@@ -15,9 +15,9 @@
     <div class="my-4 text-center">
       <h1>Encuentra tu actividad ideal</h1>
     </div>
-    <div class="cards" >
+    <div class="cards" data-aos="fade-down">
       <% @services.each do |service| %>
-          <div class="card">
+          <div class="card" data-aos="zoom-in">
             <%= cl_image_tag service.photos.first.key, class:"card-img-top", height: 200, width: 400, crop: :fill %>
             <div class="card-body">
               <h3><strong><%= service.title %></strong></h3>

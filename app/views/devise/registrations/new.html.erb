@@ -17,7 +17,7 @@
             background: hsla(0, 0%, 100%, 0.55);
             backdrop-filter: blur(30px);
             ">
-            <div class="card-body p-5 shadow-5 text-center form-outline mb-4">
+            <div class="card-body p-5 shadow-5 text-center form-outline mb-4" data-aos="fade-down-right">
             <h2 class="fw-bold mb-5">Registrarse</h2>
                           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), wrapper: :floating_labels_form, wrapper_mappings:{select: :floating_labels_select} ) do |f| %>
                             <%= f.error_notification %>
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 px-0 d-none d-md-block rounded">
+    <div class="col-md-6 px-0 d-none d-md-block rounded" data-aos="fade-down-left">
       <%= image_tag "https://i.pinimg.com/originals/6a/26/a0/6a26a048447603a93ac76b285bcadbd6.jpg", width:"100%", class:"w-100 vh-100 rounded mb-10", style:"margin-left:60px" %>
     </div>
   </div>
