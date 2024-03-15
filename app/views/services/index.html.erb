@@ -15,7 +15,7 @@
     <div class="my-4 text-center">
       <h1>Encuentra tu actividad ideal</h1>
     </div>
-    <div class="cards" >
+    <div class="cards" data-aos="zoom-in">
       <% @services.each do |service| %>
           <div class="card">
             <%= cl_image_tag service.photos.first.key, class:"card-img-top", height: 200, width: 400, crop: :fill %>

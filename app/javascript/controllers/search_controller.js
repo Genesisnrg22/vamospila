@@ -18,6 +18,11 @@ export default class extends Controller {
 
   search(event) {
     const address = event.target.value;
+    if (address == ""){
+      this.suggestionsTarget.style.display = "none";
+    } else {
+      this.suggestionsTarget.style.display = "initial";
+    }
     const url = `/services/search?title=${encodeURIComponent(address)}`;
     console.log("URL de solicitud:", url);
     fetch(url)

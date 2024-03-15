@@ -1,5 +1,5 @@
     <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top d-block bg-white py-0" data-navbar-on-scroll="data-navbar-on-scroll">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top d-block bg-white py-0 navbar-top-add" data-controller="scrollnavbar" data-action="scroll@window->scrollnavbar#changeColor" data-scrollnavbar-target="navbar">
         <div class="container p-3">
           <div class="container-logo">
             <%= image_tag "logo.png", class: "logo-medium" %>
@@ -34,5 +34,7 @@
             </ul>
           </div>
         </div>
-      <hr class="m-0">
+      <% unless current_page?("/") %>
+        <hr>
+      <% end %>
     </nav>
