@@ -1,9 +1,9 @@
-<div class="d-flex">
+<div class="d-flex justify-content-center">
   <% @service.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 </div>
-<div class="row ms-md-5" id="service_show">
+<div class="row justify-content-center" id="service_show">
   <div class="col-12 col-md-7">
     <div class="card-category mb-5 p-4">
       <div class="d-flex justify-content-between col-12">
@@ -41,7 +41,7 @@
   </div>
   </div>
 
-  <div class="row ms-md-5">
+  <div class="row justify-content-center">
     <div class="col-12 mb-5 col-md-7">
       <div class="card-category p-3">
         <h3>Descripción</h3>
@@ -62,3 +62,4 @@
       </div>
     </div>
   </div>
+</div>
