@@ -17,12 +17,9 @@ User.destroy_all
 
 puts "######################## Creando Usuarios ########################"
 
-cart1 = Cart.create!
-cart2 = Cart.create!
-
-user1 = User.new(email: "cristopher@gmail.com",
+user1 = User.new(email: "crhistopher@gmail.com",
                  password: "123456",
-                 first_name: "Cristopher",
+                 first_name: "Crhistopher",
                  last_name: "Odreman",
                  phone: "+584143007592",
                  dni: "V-26809655",
@@ -32,7 +29,7 @@ file = URI.open("https://avatars.githubusercontent.com/u/134723849?v=4")
 user1.photo.attach(io: file, filename: "cristopher.png", content_type: "image/png")
 user1.save!
 
-puts "Usuario Cristopher creado"
+puts "Usuario Crhistopher creado"
 
 user2 = User.new(email: "genesis@gmail.com",
                  password: "123456",
@@ -89,7 +86,9 @@ service1 = Service.new(service_type: "Fullday",
                        date: "2024/10/23",
                        user_id: user2.id)
 photo_urls = [
-  ""
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443040/1_esyw2e.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443041/2_mav9g8.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443044/3_hjklat.png"
 ]
 photo_urls.each do |url|
   service1.photos.attach(io: URI.open(url), filename: "service1.jpg")
@@ -111,10 +110,9 @@ service2 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194022/development/axvwp7y89h7p0au8bct0pa36doz9.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194019/development/8t37r1w67sdqooz55luom41v4dr4.webp",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194020/development/fbuzivtp2xkze4fm3ov4j92fto75.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194021/development/6cqllvwqfob1iae6pduabinp4eui.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443049/5_dpntpa.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443052/6_bylz5p.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443054/7_xvh4ru.webp"
 ]
 photo_urls.each do |url|
   service2.photos.attach(io: URI.open(url), filename: "service2.jpg")
@@ -136,10 +134,9 @@ service3 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194028/development/r4vqo77p8jdenjbss5m0k2aods1b.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194025/development/xkexbg7df01mqkdtetg858h23nmk.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194026/development/h21pec3gv8tgor5t9gvwda3wfhoz.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194027/development/pa6gvgrqgmap4euf9u89x8jn4men.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443059/9_ypkyne.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443062/10_o6ue7p.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443064/11_zynwft.jpg"
 ]
 
 photo_urls.each do |url|
@@ -162,10 +159,9 @@ service4 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194032/development/yillye1wh44a0dy51ycpq2avkgyh.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194030/development/efzs9k4s0xqz4x9nawuh9smndcs7.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194031/development/yd30epyltqbyni6ro5yfqxpj8006.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194035/development/g5qi9opjrcg71jul80ltq98ki28o.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443069/13_u2xhat.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443072/14_qj4wat.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443074/15_opm8sp.jpg"
 ]
 
 photo_urls.each do |url|
@@ -188,10 +184,9 @@ service5 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194040/development/hi1c8onbtjn394qv1jn13xr7c8x5.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194038/development/3c6i1rx3bgclupvng6zz1q7cksd6.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194039/development/oor1k6zqpt98x5izkprsvmo6dkvw.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194038/development/3c6i1rx3bgclupvng6zz1q7cksd6.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443087/20_ath1dn.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443079/17_fwkwdo.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443082/18_rqljfm.jpg"
 ]
 
 photo_urls.each do |url|
@@ -214,10 +209,9 @@ service6 = Service.new(service_type: "Fullday",
                        user_id: user2.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194062/development/ru0mgvn3iv798avjczg6wb66tq0j.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194063/development/t614ai9aj1c16kv6vwan3baeh587.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194064/development/qiwjd00chk7x65k7wrg5n29sxf78.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194065/development/m9o9c0cpg757vkczqgi1qa28afs1.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443089/21_k9y1ox.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443091/22_tfqlfs.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443095/23_kjvihf.jpg"
 ]
 
 photo_urls.each do |url|
@@ -240,10 +234,9 @@ service7 = Service.new(service_type: "Fullday",
                        user_id: user1.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948552/development/152spukzqdd3zrbjb5pgym9p6aap.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948553/development/fr4iy0d7gqhtivbafhqf3f2y83b7.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948555/development/rthniauq5lrwmcnftossrpacsu2m.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948556/development/9jna04l5bbfayxz67o4o9tg7iq62.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443099/25_jkdw9h.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443101/26_stmbmv.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443103/27_zekf3m.jpg"
 ]
 
 photo_urls.each do |url|
@@ -266,10 +259,9 @@ service8 = Service.new(service_type: "Fullday",
                        user_id: user1.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194073/development/a4u7fr8934yb1nt5poel6obovv7c.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194070/development/z9y90r0xb2jerij55gujamqglham.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194071/development/7s1eutaoz2z177zzcd2de7s6zbfs.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1710194072/development/mpqqzzuzfgxrpdxcngxgj01glu5m.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443108/29_asiq2k.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443111/30_rx9oyv.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443113/31_sqpe4e.jpg"
 ]
 
 photo_urls.each do |url|
@@ -292,10 +284,9 @@ service9 = Service.new(service_type: "Fullday",
                        user_id: user1.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948582/development/0jhg1gu0fa5jjlhzrwzjt52i0wwm.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948583/development/o1mm9hx6pplvzy4t182fv4yt5l97.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948591/development/r9ims00h8legdy3ugsvrvknp6l0q.png",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948592/development/159dwi8wf3wehdpjrfz0f4z32njp.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443118/33_oxmf3u.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443120/34_vgq35r.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443123/35_ir7nzo.png"
 ]
 
 photo_urls.each do |url|
@@ -318,10 +309,9 @@ service10 = Service.new(service_type: "Fullday",
                         user_id: user1.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948600/development/t3mbh5nohu43q175fyxvgrmnj9wx.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948602/development/jqpuv3sa0kum77thlckrhi0rlt2e.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948604/development/1gagf7q2k9t2ts8aizxzqn5tuos8.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948606/development/8njnfp011ffkjyl2h21kyxoi6xe0.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443128/37_loxrxb.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443130/38_ew9j90.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443133/39_y7idbj.jpg"
 ]
 
 photo_urls.each do |url|
@@ -344,10 +334,9 @@ service11 = Service.new(service_type: "Fullday",
                         user_id: user1.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948612/development/45a16062stzj3mnij6tuvzmjl7y0.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948614/development/3pda4yi3d1k2w2zaptb4hs7j2udj.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948616/development/yfr5my0cer8fbsnnz4vtq6ywlkfs.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948619/development/h5800x876yzf462jw7hhx4ge8xa6.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443137/41_qjhg3g.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443201/42_ifsmyw.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443204/43_mj9vi8.jpg"
 ]
 
 photo_urls.each do |url|
@@ -357,7 +346,6 @@ end
 service11.save!
 
 puts "#{service11.service_type} #{service11.title} Creado"
-
 
 service12 = Service.new(service_type: "Fullday",
                         title: "Parque El Agua",
@@ -369,10 +357,9 @@ service12 = Service.new(service_type: "Fullday",
                         user_id: user1.id)
 
 photo_urls = [
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948627/development/b6v8sbf1t7a0u98g1qylivtxvu3j.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948629/development/1k5tk9a7qiocwdv739ej9gzeth3x.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948631/development/wxebbkboh5ngq4r3ibkb8vn8ttyy.jpg",
-  "https://res.cloudinary.com/dden4e24f/image/upload/v1709948633/development/9dpcbjlib91plq8lj6xymfn67ayu.jpg"
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443208/45_h1jcuy.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443211/46_ogzrxb.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443213/47_kyvcrp.jpg"
 ]
 
 photo_urls.each do |url|
@@ -382,3 +369,220 @@ end
 service12.save!
 
 puts "#{service12.service_type} #{service12.title} Creado"
+
+service13 = Service.new(service_type: "Fullday",
+                        title: "Cayo Sombrero",
+                        price: 150,
+                        rating: 0,
+                        description: "Cayo Sombrero es el nombre de una isla del mar Caribe que pertenece al parque nacional Morrocoy, Es la isla más grande después de Punta Brava y una de las islas más populares del parque nacional. Posee una superficie aproximada de 35 hectáreas o 0,35 kilómetros cuadrados por lo que tiene una superficie un poco más pequeña que la Ciudad del Vaticano. Cuenta con dos playas grandes y un bosque de palmeras que ofrece sombra natural. Es equidistante de las poblaciones de Tucacas y Chichiriviche. Se encuentra en la parte más oriental del parque nacional Morrocoy, cerca de Cayo Pescadores y Playa Mayoral.",
+                        address: "Cayo Sombrero municipio Silva Tucacas Falcón",
+                        latitude: "10,883523",
+                        longitude: "-68,209566",
+                        date: "2024/12/15",
+                        user_id: user3.id)
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443040/1_esyw2e.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443041/2_mav9g8.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443044/3_hjklat.png"
+]
+photo_urls.each do |url|
+  service13.photos.attach(io: URI.open(url), filename: "service13.jpg")
+end
+
+service13.save!
+
+puts "#{service13.service_type} #{service13.title} Creado"
+
+service14 = Service.new(service_type: "Fullday",
+                        title: "Cayo Sombrero",
+                        price: 150,
+                        rating: 0,
+                        description: "Cayo Sombrero es el nombre de una isla del mar Caribe que pertenece al parque nacional Morrocoy, Es la isla más grande después de Punta Brava y una de las islas más populares del parque nacional. Posee una superficie aproximada de 35 hectáreas o 0,35 kilómetros cuadrados por lo que tiene una superficie un poco más pequeña que la Ciudad del Vaticano. Cuenta con dos playas grandes y un bosque de palmeras que ofrece sombra natural. Es equidistante de las poblaciones de Tucacas y Chichiriviche. Se encuentra en la parte más oriental del parque nacional Morrocoy, cerca de Cayo Pescadores y Playa Mayoral.",
+                        address: "Cayo Sombrero municipio Silva Tucacas Falcón",
+                        latitude: "10,883523",
+                        longitude: "-68,209566",
+                        date: "2024/05/12",
+                        user_id: user1.id)
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443040/1_esyw2e.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443041/2_mav9g8.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443044/3_hjklat.png"
+]
+photo_urls.each do |url|
+  service14.photos.attach(io: URI.open(url), filename: "service14.jpg")
+end
+
+service14.save!
+
+puts "#{service14.service_type} #{service14.title} Creado"
+
+service15 = Service.new(service_type: "Fullday",
+                        title: "Medanos de Coro",
+                        price: 80,
+                        rating: 0,
+                        description: "El Parque Nacional Los Médanos de Coro es un parque nacional ubicado en el estado Falcón que abarca la jurisdicción de los municipios Miranda, Colina y Falcón, en el noroeste de Venezuela. Su área más importante está circunscrita alrededor del istmo, en la vía a la Península de Paraguaná. El istmo comprende una franja de 30 km de largo por 5 km de ancho, al sur de la franja se encuentra el parque nacional con 808,66 kilómetros de distribución abarcando todo el norte de la ciudad de Santa Ana de Coro ciudad declarara patrimonio de la humanidad.",
+                        address: "Medanos de Coro, Estado Falcón, Venezuela",
+                        latitude: "11,035275",
+                        longitude: "-68,404183",
+                        date: "2024/03/30",
+                        user_id: user1.id)
+
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443049/5_dpntpa.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443052/6_bylz5p.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443054/7_xvh4ru.webp"
+]
+photo_urls.each do |url|
+  service15.photos.attach(io: URI.open(url), filename: "service15.jpg")
+end
+
+service15.save!
+
+puts "#{service15.service_type} #{service15.title} Creado"
+
+service16 = Service.new(service_type: "Fullday",
+                        title: "Medanos de Coro",
+                        price: 80,
+                        rating: 0,
+                        description: "El Parque Nacional Los Médanos de Coro es un parque nacional ubicado en el estado Falcón que abarca la jurisdicción de los municipios Miranda, Colina y Falcón, en el noroeste de Venezuela. Su área más importante está circunscrita alrededor del istmo, en la vía a la Península de Paraguaná. El istmo comprende una franja de 30 km de largo por 5 km de ancho, al sur de la franja se encuentra el parque nacional con 808,66 kilómetros de distribución abarcando todo el norte de la ciudad de Santa Ana de Coro ciudad declarara patrimonio de la humanidad.",
+                        address: "Medanos de Coro, Estado Falcón, Venezuela",
+                        latitude: "11,035275",
+                        longitude: "-68,404183",
+                        date: "2024/08/23",
+                        user_id: user4.id)
+
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443049/5_dpntpa.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443052/6_bylz5p.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443054/7_xvh4ru.webp"
+]
+photo_urls.each do |url|
+  service16.photos.attach(io: URI.open(url), filename: "service16.jpg")
+end
+
+service16.save!
+
+puts "#{service16.service_type} #{service16.title} Creado"
+
+service17 = Service.new(service_type: "Fullday",
+                        title: "Parque Nacional Mochima",
+                        price: 140,
+                        rating: 0,
+                        description: "El Parque Nacional Mochima está ubicado en la región fisiográfica de la Cadena Oriental de la Cordillera de la Costa. Incluye una región marino costera e insular donde se encuentran playas, golfos, bahías y ensenadas de gran belleza escénica e importantes fondos marinos, con presencia de comunidades de coral de gran riqueza y diversidad biológica.",
+                        address: "Parque Nacional Mochima Venezuela",
+                        latitude: "10.346384",
+                        longitude: "-64.340658",
+                        date: "2024/12/5",
+                        user_id: user4.id)
+
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443059/9_ypkyne.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443062/10_o6ue7p.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443064/11_zynwft.jpg"
+]
+
+photo_urls.each do |url|
+  service17.photos.attach(io: URI.open(url), filename: "service17.jpg")
+end
+
+service17.save!
+
+puts "#{service17.service_type} #{service17.title} Creado"
+
+service18 = Service.new(service_type: "Fullday",
+                        title: "Parque Nacional El Avila",
+                        price: 50,
+                        rating: 0,
+                        description: "El Parque Nacional El Ávila llamado también como Parque Nacional Waraira Repano, es el mayor parque de la ciudad de Caracas además de su principal fuente de oxígeno. Fuente de inspiración para poetas y artistas, es un sitio de esparcimiento que fue creado en diciembre del año 1958 debido al notable crecimiento de la ciudad. El Parque Nacional El Ávila es uno de los lugares preferidos durante las mañanas o atardeceres, por los residentes, para caminar, escalar y relajarse en medio de un bellísimo paisaje natural. Por otra parte, podrás llegar a la cima del monte Ávila mediante el teleférico o visitar el pueblo de Galipán, donde disfrutarás de sus restaurantes y cafeterías, utilizando vehículos rústicos personales. El parque cubre unas 85.000 hectáreas y alberga importantes picos como por ejemplo la Silla de Caracas; el pico Humboldt (2159 mts.), el Naiguatá (2.765 mts.), el topo Galindo (2.600 mts.); el topo Goering (2.460 mts.), entre otros.",
+                        address: "Parque Nacional el Ávila, Caracas, Venezuela",
+                        latitude: "10,557388",
+                        longitude: "-66,860008",
+                        date: "2024/07/25",
+                        user_id: user4.id)
+
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443069/13_u2xhat.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443072/14_qj4wat.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443074/15_opm8sp.jpg"
+]
+
+photo_urls.each do |url|
+  service18.photos.attach(io: URI.open(url), filename: "service18.jpg")
+end
+
+service18.save!
+
+puts "#{service18.service_type} #{service18.title} Creado"
+
+service19 = Service.new(service_type: "Fullday",
+                        title: "Dunas Parque Acuático",
+                        price: 60,
+                        rating: 0,
+                        description: "Ubicado en la Ciudad de Valencia, Municipio Naguanagua del Estado Carabobo, El parque acuático incluye múltiples atracciones entre ellas Aquacity, Go Karts, vive el Vértigo en la montaña rusa full adrenalina, el bosque encantado, golfito, zona infantil y mucho más, ven al Parque Dunas y pasa un día diferente de entretenimiento familiar. Horario Diurno: Viernes, Sábados y Domingos: 09:00 am a 04:00 pm / Horario Nocturno: Viernes, Sábados y Domingos: 5:00 pm a 11:00 pm",
+                        address: "Avenida Principal, Edificio Parque Dunas, Local 175-505, Urbanización Mañongo, Valencia, Estado Carabobo ",
+                        latitude: "10,214940",
+                        longitude: "-67,994919",
+                        date: "2024/04/12",
+                        user_id: user3.id)
+
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443108/29_asiq2k.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443111/30_rx9oyv.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443113/31_sqpe4e.jpg"
+]
+
+photo_urls.each do |url|
+  service19.photos.attach(io: URI.open(url), filename: "service19.jpg")
+end
+
+service19.save!
+
+puts "#{service19.service_type} #{service19.title} Creado"
+
+service20 = Service.new(service_type: "Fullday",
+                        title: "Parque El Agua",
+                        price: 20,
+                        rating: 0,
+                        description: "En este parque se encuentra el tobogán más alto de Venezuela, de 18 metros, el Churún Merú. Todos los toboganes del parque tienen nombres indígenas y Churún Merú, el nombre indígena del 'Salto Angel', es apropiado para este tobogán, solo apto para los más osados. Pero, en el Parque el Agua, hay para todos los gustos. Además del Churún Merú, hay cuatro toboganes con distintos niveles de emoción.",
+                        address: "31 Av. 31 de Julio Barco de Ent a Parque el Agua, Porlamar, Isla de Margarita",
+                        date: "2024/06/23",
+                        user_id: user4.id)
+
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443208/45_h1jcuy.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443211/46_ogzrxb.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443213/47_kyvcrp.jpg"
+]
+
+photo_urls.each do |url|
+  service20.photos.attach(io: URI.open(url), filename: "service20.jpg")
+end
+
+service20.save!
+
+puts "#{service20.service_type} #{service20.title} Creado"
+
+service21 = Service.new(service_type: "Fullday",
+                        title: "La Venezuela de Antier",
+                        price: 65,
+                        rating: 0,
+                        description: "En la vía a Jají desde Ciudad de Merida, se encuentra uno de los parques temáticos de Merida: 'La Venezuela de Antier'. El tema de este parque es la Venezuela de los años 20 cuando entonces gobernaba el benemérito Juan Vicente Gomez. El recorrido comienza en la estación principal (donde se encuentra el estacionamiento.) se compran las entradas y se toma unos tranvías de la antigua Caracas hasta llegar al parque. Al llegar a la primera estación somos recibidos por un Coronel, quien crea un ambiente que involucra a los visitantes en el tema del parque. Tras la llegada las primeras atracciones son: Un pequeño museo con antiguedades, La Cueva del Guacharo (donde hay una muestra de la misma) y Nueva Esparta (donde se puede participar en un espectáculo donde se rescatan las tradiciones de La Isla de Margarita, el cual esta hecho con mucho humor).",
+                        address: "Carretera Panamericana vía Jají - La Azulita, 5101 Mérida",
+                        latitude: "8,593546",
+                        longitude: "-71,233902",
+                        date: "2024/08/13",
+                        user_id: user3.id)
+
+photo_urls = [
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443137/41_qjhg3g.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443201/42_ifsmyw.jpg",
+  "https://res.cloudinary.com/dden4e24f/image/upload/v1710443204/43_mj9vi8.jpg"
+]
+
+photo_urls.each do |url|
+  service21.photos.attach(io: URI.open(url), filename: "service21.jpg")
+end
+
+service21.save!
+
+puts "#{service21.service_type} #{service21.title} Creado"
